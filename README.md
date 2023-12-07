@@ -1,2 +1,1 @@
-Holbertonschool-csharp
-Holberton AR/VR Specialization - Working with C#
+lberton AR/VR Specialization - Working with C#
