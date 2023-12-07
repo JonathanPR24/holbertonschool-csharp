@@ -7,4 +7,4 @@ mkdir 0-new_project
 cd 0-new_project
 
 # Create a new console application
-dotnet new console -n 0-new_project
+dotnet new console --force
