@@ -1,12 +1,15 @@
 ﻿using System;
 
-class Program
+namespace NumberPrinting
 {
-    static void Main(string[] args)
+    class Program
     {
-        for (int number = 0; number <= 98; number++)
+        static void Main(string[] args)
         {
-            Console.Write($"{number} = 0x{number:X}\n");
+            for (int number = 0; number <= 98; number++)
+            {
+                Console.Write($"{number} = 0x{number:X}\n");
+            }
         }
     }
 }
