@@ -4,9 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        int streetNumber = 972;
-        string streetName = "Mission Street";
-
-        Console.WriteLine("{0} {1}", streetNumber, streetName);
+        string str1 = "Street";
+        string str2 = "Mission";
+        int int1 = 972;
+        Console.WriteLine(int1 + " " + str2 + " " + str1);
     }
 }
