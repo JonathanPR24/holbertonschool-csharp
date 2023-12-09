@@ -2,7 +2,7 @@
 
 class Program
 {
-    static void main(string[] args)
+    static void Main(string[] args)
     {
         for (char letter = 'a'; letter <= 'z'; letter++)
         {
