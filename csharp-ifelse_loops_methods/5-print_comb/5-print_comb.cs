@@ -6,16 +6,7 @@ class Program
     {
         for (int number = 0; number < 100; number++)
         {
-            Console.Write($"{number:D2}");
-
-            if (number < 99)
-            {
-                Console.Write(", ");
-            }
-            else
-            {
-                Console.Write("\n");
-            }
+            Console.Write($"{number:D2}{(number < 99 ? ", " : "\n")}");
         }
     }
 }
