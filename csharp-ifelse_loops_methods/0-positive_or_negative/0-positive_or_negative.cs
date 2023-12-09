@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 class Program
 {
     static void Main(string[] args)
@@ -8,10 +7,10 @@ class Program
         Random rndm = new Random();
         int number = rndm.Next(-10, 10);
 
-        // Checks if number is positive, negative, or zero
+        // Check if the number is positive, negative, or zero
         if (number > 0)
         {
-            Console.WriteLine($"{number} is positve");
+            Console.WriteLine($"{number} is positive");
         }
         else if (number < 0)
         {
@@ -23,4 +22,3 @@ class Program
         }
     }
 }
-``` 
