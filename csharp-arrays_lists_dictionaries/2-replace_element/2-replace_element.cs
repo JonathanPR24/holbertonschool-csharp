@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿﻿﻿using System;
 
 class Array
 {
@@ -6,22 +6,21 @@ class Array
     {
         if (array == null)
         {
-            Console.WriteLine();
+            Console.WriteLine("");
             return;
         }
 
-        int length = array.Length;
-
-        for (int i = length - 1; i >= 0; i--)
+        for (int i = array.Length - 1; i >= 0; i--)
         {
-            Console.Write(array[i]);
-
-            if (i > 0)
+            if (i == 0)
             {
-                Console.Write(" ");
+                Console.Write(array[i]);
+            }
+            else
+            {
+                Console.Write($"{array[i]} ");
             }
         }
-
-        Console.WriteLine();
+        Console.WriteLine("");
     }
 }
