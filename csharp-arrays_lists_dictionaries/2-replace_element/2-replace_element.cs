@@ -10,9 +10,18 @@ class Array
             return;
         }
 
-        Array.Reverse(array);  // Reverse the array in-place
+        int length = array.Length;
 
-        string result = string.Join(" ", array);
-        Console.WriteLine(result);
+        for (int i = length - 1; i >= 0; i--)
+        {
+            Console.Write(array[i]);
+
+            if (i > 0)
+            {
+                Console.Write(" ");
+            }
+        }
+
+        Console.WriteLine();
     }
 }
