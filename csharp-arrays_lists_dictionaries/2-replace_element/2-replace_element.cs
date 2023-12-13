@@ -1,26 +1,40 @@
-﻿﻿﻿using System;
+﻿using System;
 
 class Array
 {
-    public static void Reverse(int[] array)
+    public static int[] ReplaceElement(int[] array, int index, int n)
     {
-        if (array == null)
+        if (index < 0 || index >= array.Length)
         {
-            Console.WriteLine("");
-            return;
+            Console.WriteLine("Index out of range");
+            return array;
         }
 
-        for (int i = array.Length - 1; i >= 0; i--)
+        array[index] = n;
+        return array;
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int[] array = { 0, 1, 2, 3, 4, 5, 6 };
+
+        PrintArray(array);
+        Array.ReplaceElement(array, 1, 98);
+        PrintArray(array);
+    }
+
+    static void PrintArray(int[] array)
+    {
+        for (int i = 0; i < array.Length; i++)
         {
-            if (i == 0)
-            {
-                Console.Write(array[i]);
-            }
-            else
-            {
-                Console.Write($"{array[i]} ");
-            }
+            Console.Write(array[i]);
+            if (i < array.Length - 1)
+                Console.Write(" ");
         }
-        Console.WriteLine("");
+
+        Console.WriteLine();
     }
 }
