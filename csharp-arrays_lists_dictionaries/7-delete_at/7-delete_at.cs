@@ -11,7 +11,7 @@ class List
             return myList;
         }
 
-        myList.RemoveAt(index);
+        myList.RemoveAt(index, 1);
         return myList;
     }
 }
