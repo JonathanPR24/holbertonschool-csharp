@@ -13,8 +13,13 @@ class MyStack
         {
             Stack<string> tempStack = new Stack<string>();
 
-            while (aStack.Count > 0 && aStack.Peek() != search) tempStack.Push(aStack.Pop());
-            if (aStack.Count > 0) aStack.Pop(); // Remove the search item
+            while (aStack.Count > 0)
+            {
+                string item = aStack.Pop();
+                if (item == search) break;
+                tempStack.Push(item);
+            }
+
             while (tempStack.Count > 0) aStack.Push(tempStack.Pop());
         }
 
