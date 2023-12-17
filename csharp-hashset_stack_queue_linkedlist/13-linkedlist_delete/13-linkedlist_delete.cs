@@ -7,22 +7,15 @@ class LList
     {
         if (index < 0 || index >= myLList.Count)
         {
-            return; // Invalid index
-        }
-
-        LinkedListNode<int> current = myLList.First;
-
-        if (index == 0)
-        {
-            myLList.RemoveFirst();
             return;
         }
 
-        for (int i = 0; i < index - 1; i++)
+        LinkedListNode<int> nodeToDelete = myLList.First;
+        for (int i = 0; i < index; i++)
         {
-            current = current.Next;
+            nodeToDelete = nodeToDelete.Next;
         }
 
-        myLList.RemoveAfter(current);
+        myLList.Remove(nodeToDelete);
     }
 }
