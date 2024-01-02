@@ -4,7 +4,7 @@ class Except
 {
     public static void Throw()
     {
-        throw new Exception("Custom Exception");
+        throw new Exception();
     }
 }
 
