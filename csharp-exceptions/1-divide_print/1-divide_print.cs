@@ -1,21 +1,29 @@
-﻿using System;
-
-class Int
+﻿class List
 {
-    public static void divide(int a, int b)
+    public static List<int> Divide(List<int> list1, List<int> list2, int listLength)
     {
+        List<int> result = new List<int>();
+
         try
         {
-            int result = a / b;
-            Console.WriteLine($"{a} / {b} = {result}");
+            for (int i = 0; i < listLength; i++)
+            {
+                try
+                {
+                    int divisionResult = list2[i] == 0 ? 0 : list1[i] / list2[i];
+                    result.Add(divisionResult);
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    Console.WriteLine("Out of range");
+                }
+            }
         }
         catch (DivideByZeroException)
         {
             Console.WriteLine("Cannot divide by zero");
         }
-        finally
-        {
-            Console.WriteLine($"{a} / {b} = {(b == 0 ? 0 : a / b)}");
-        }
+
+        return result;
     }
 }
