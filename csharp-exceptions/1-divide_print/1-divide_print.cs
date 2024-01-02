@@ -1,29 +1,24 @@
-﻿class List
+﻿using System;
+
+class Int
 {
-    public static List<int> Divide(List<int> list1, List<int> list2, int listLength)
+    public static void Divide(int numerator, int denominator)
     {
-        List<int> result = new List<int>();
+        const string cannotDivideByZeroMessage = "Cannot divide by zero";
+        
+        int result = 0;
 
         try
         {
-            for (int i = 0; i < listLength; i++)
-            {
-                try
-                {
-                    int divisionResult = list2[i] == 0 ? 0 : list1[i] / list2[i];
-                    result.Add(divisionResult);
-                }
-                catch (ArgumentOutOfRangeException)
-                {
-                    Console.WriteLine("Out of range");
-                }
-            }
+            result = numerator / denominator;
         }
         catch (DivideByZeroException)
         {
-            Console.WriteLine("Cannot divide by zero");
+            Console.WriteLine(cannotDivideByZeroMessage);
         }
-
-        return result;
+        finally
+        {
+            Console.WriteLine($"{numerator} / {denominator} = {result}");
+        }
     }
 }
