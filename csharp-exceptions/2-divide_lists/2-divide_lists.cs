@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿﻿﻿using System;
 using System.Collections.Generic;
 
 class List
@@ -9,13 +9,9 @@ class List
 
         for (int i = 0; i < listLength; i++)
         {
-            int dividend = (i < list1.Count) ? list1[i] : 0;
-            int divisor = (i < list2.Count && list2[i] != 0) ? list2[i] : 1; // Default divisor to 1 to avoid division by zero
-
             try
             {
-                int result = dividend / divisor;
-                quotients.Add(result);
+                quotients.Add(list1[i] / list2[i]);
             }
             catch (DivideByZeroException)
             {
@@ -25,11 +21,6 @@ class List
             catch (ArgumentOutOfRangeException)
             {
                 Console.WriteLine("Out of range");
-                break; // Stop processing if either list is too short
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An unexpected error occurred: {ex.Message}");
             }
         }
 
