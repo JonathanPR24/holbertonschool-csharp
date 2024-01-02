@@ -1,9 +1,4 @@
-﻿
-Sure, you can implement the SafePrint method in the List class as follows:
-
-csharp
-Copy code
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 class List
