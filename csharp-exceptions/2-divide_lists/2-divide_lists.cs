@@ -7,32 +7,30 @@ class List
     {
         List<int> quotients = new List<int>();
 
-        try
+        for (int i = 0; i < listLength; i++)
         {
-            for (int i = 0; i < listLength; i++)
-            {
-                try
-                {
-                    int dividend = (i < list1.Count) ? list1[i] : 0;
-                    int divisor = (i < list2.Count && list2[i] != 0) ? list2[i] : 1; // Default divisor to 1 to avoid division by zero
+            int dividend = (i < list1.Count) ? list1[i] : 0;
+            int divisor = (i < list2.Count && list2[i] != 0) ? list2[i] : 1; // Default divisor to 1 to avoid division by zero
 
-                    quotients.Add(dividend / divisor);
-                }
-                catch (DivideByZeroException)
-                {
-                    Console.WriteLine("Cannot divide by zero");
-                    quotients.Add(0);
-                }
-                catch (ArgumentOutOfRangeException)
-                {
-                    Console.WriteLine("Out of range");
-                    break; // Stop processing if either list is too short
-                }
+            try
+            {
+                int result = dividend / divisor;
+                quotients.Add(result);
             }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Cannot divide by zero");
+                quotients.Add(0);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("Out of range");
+                break; // Stop processing if either list is too short
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+            }
         }
 
         return quotients;
