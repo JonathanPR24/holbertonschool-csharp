@@ -3,27 +3,36 @@ using System.Collections.Generic;
 
 class List
 {
-    public static List<int> Divide(List<int> list1, List<int> list2)
+    public static List<int> Divide(List<int> list1, List<int> list2, int listLength)
     {
         List<int> quotients = new List<int>();
 
-        int minLength = Math.Min(list1.Count, list2.Count);
-
-        for (int i = 0; i < minLength; i++)
+        try
         {
-            try
+            for (int i = 0; i < listLength; i++)
             {
-                quotients.Add(list1[i] / list2[i]);
+                try
+                {
+                    int dividend = (i < list1.Count) ? list1[i] : 0;
+                    int divisor = (i < list2.Count && list2[i] != 0) ? list2[i] : 1; // Default divisor to 1 to avoid division by zero
+
+                    quotients.Add(dividend / divisor);
+                }
+                catch (DivideByZeroException)
+                {
+                    Console.WriteLine("Cannot divide by zero");
+                    quotients.Add(0);
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    Console.WriteLine("Out of range");
+                    break; // Stop processing if either list is too short
+                }
             }
-            catch (DivideByZeroException)
-            {
-                Console.WriteLine("Cannot divide by zero");
-                quotients.Add(0);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                Console.WriteLine("Out of range");
-            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An unexpected error occurred: {ex.Message}");
         }
 
         return quotients;
