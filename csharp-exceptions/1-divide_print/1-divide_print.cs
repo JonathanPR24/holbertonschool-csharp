@@ -13,5 +13,9 @@ class Int
         {
             Console.WriteLine("Cannot divide by zero");
         }
+        finally
+        {
+            Console.WriteLine($"{a} / {b} = {(b == 0 ? 0 : a / b)}");
+        }
     }
 }
