@@ -1,0 +1,13 @@
+C:\Users\jonat\holbertonschool-csharp\holbertonschool-csharp\csharp-classes\5-enemy\bin\Debug\netcoreapp2.1\5-enemy.deps.json
+C:\Users\jonat\holbertonschool-csharp\holbertonschool-csharp\csharp-classes\5-enemy\bin\Debug\netcoreapp2.1\5-enemy.runtimeconfig.json
+C:\Users\jonat\holbertonschool-csharp\holbertonschool-csharp\csharp-classes\5-enemy\bin\Debug\netcoreapp2.1\5-enemy.runtimeconfig.dev.json
+C:\Users\jonat\holbertonschool-csharp\holbertonschool-csharp\csharp-classes\5-enemy\bin\Debug\netcoreapp2.1\5-enemy.dll
+C:\Users\jonat\holbertonschool-csharp\holbertonschool-csharp\csharp-classes\5-enemy\bin\Debug\netcoreapp2.1\5-enemy.pdb
+C:\Users\jonat\holbertonschool-csharp\holbertonschool-csharp\csharp-classes\5-enemy\bin\Debug\netcoreapp2.1\5-enemy.xml
+C:\Users\jonat\holbertonschool-csharp\holbertonschool-csharp\csharp-classes\5-enemy\obj\Debug\netcoreapp2.1\5-enemy.csprojAssemblyReference.cache
+C:\Users\jonat\holbertonschool-csharp\holbertonschool-csharp\csharp-classes\5-enemy\obj\Debug\netcoreapp2.1\5-enemy.csproj.CoreCompileInputs.cache
+C:\Users\jonat\holbertonschool-csharp\holbertonschool-csharp\csharp-classes\5-enemy\obj\Debug\netcoreapp2.1\5-enemy.AssemblyInfoInputs.cache
+C:\Users\jonat\holbertonschool-csharp\holbertonschool-csharp\csharp-classes\5-enemy\obj\Debug\netcoreapp2.1\5-enemy.AssemblyInfo.cs
+C:\Users\jonat\holbertonschool-csharp\holbertonschool-csharp\csharp-classes\5-enemy\obj\Debug\netcoreapp2.1\5-enemy.dll
+C:\Users\jonat\holbertonschool-csharp\holbertonschool-csharp\csharp-classes\5-enemy\obj\Debug\netcoreapp2.1\5-enemy.xml
+C:\Users\jonat\holbertonschool-csharp\holbertonschool-csharp\csharp-classes\5-enemy\obj\Debug\netcoreapp2.1\5-enemy.pdb
