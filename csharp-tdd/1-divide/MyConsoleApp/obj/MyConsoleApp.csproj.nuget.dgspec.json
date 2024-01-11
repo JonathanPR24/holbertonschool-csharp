@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\1-divide\\MyMath.ConsoleApp\\MyMath.ConsoleApp.csproj": {}
+    "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\1-divide\\MyConsoleApp\\MyConsoleApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\1-divide\\MyMath.ConsoleApp\\MyMath.ConsoleApp.csproj": {
+    "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\1-divide\\MyConsoleApp\\MyConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\1-divide\\MyMath.ConsoleApp\\MyMath.ConsoleApp.csproj",
-        "projectName": "MyMath.ConsoleApp",
-        "projectPath": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\1-divide\\MyMath.ConsoleApp\\MyMath.ConsoleApp.csproj",
+        "projectUniqueName": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\1-divide\\MyConsoleApp\\MyConsoleApp.csproj",
+        "projectName": "MyConsoleApp",
+        "projectPath": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\1-divide\\MyConsoleApp\\MyConsoleApp.csproj",
         "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\1-divide\\MyMath.ConsoleApp\\obj\\",
+        "outputPath": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\1-divide\\MyConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
