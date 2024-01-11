@@ -1,25 +1,50 @@
 ﻿using System;
-using System.Linq;
+using System.Text;
 
 namespace Text
 {
     /// <summary>
-    /// Provides string manipulation methods.
+    /// Class for string functions.
     /// </summary>
-    public static class Str
+    public class Str
     {
         /// <summary>
-        /// Determines if a given string is a palindrome.
+        /// Checks if a string is a palindrome.
         /// </summary>
-        /// <param name="s">The input string.</param>
-        /// <returns>True if the string is a palindrome, otherwise false.</returns>
+        /// <param name="s">The string to check.</param>
+        /// <returns>True if palindrome, otherwise false.</returns>
         public static bool IsPalindrome(string s)
         {
-            // Convert the string to lowercase and remove spaces and punctuation
-            string cleanedString = new string(s.ToLower().Where(c => Char.IsLetterOrDigit(c)).ToArray());
+            if (s == null)
+            {
+                throw new ArgumentNullException(nameof(s));
+            }
 
-            // Check if the cleaned string is equal to its reverse
-            return cleanedString == new string(cleanedString.Reverse().ToArray());
+            StringBuilder normalized = new StringBuilder();
+
+            foreach (char c in s)
+            {
+                if (char.IsLetter(c))
+                {
+                    normalized.Append(char.ToLower(c));
+                }
+            }
+
+            int i = 0;
+            int j = normalized.Length - 1;
+
+            while (i < j)
+            {
+                if (normalized[i] != normalized[j])
+                {
+                    return false;
+                }
+
+                i++;
+                j--;
+            }
+
+            return true;
         }
     }
 }

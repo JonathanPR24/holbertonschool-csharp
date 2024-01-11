@@ -1,61 +1,36 @@
 using NUnit.Framework;
-using Text;
 
-namespace Text.Tests
+namespace Tests
 {
-    [TestFixture]
     public class StrTests
     {
-        [Test]
-        public void IsPalindrome_WhenPalindrome_ReturnsTrue()
+        [SetUp]
+        public void Setup()
         {
-            // Arrange
-            string palindrome = "Racecar";
-
-            // Act
-            bool result = Str.IsPalindrome(palindrome);
-
-            // Assert
-            Assert.IsTrue(result);
         }
 
-        [Test]
-        public void IsPalindrome_WhenNotPalindrome_ReturnsFalse()
+        [TestCase("abcba", TestName = "IsPalindrome_SingleWordPalindrome_ReturnsTrue")]
+        [TestCase("BananasananaB", TestName = "IsPalindrome_MixedCasePalindrome_ReturnsTrue")]
+        [TestCase("fubaRabuf", TestName = "IsPalindrome_MixedCaseNonPalindrome_ReturnsFalse")]
+        [TestCase("", TestName = "IsPalindrome_EmptyString_ReturnsTrue")]
+        [TestCase("Beneb", TestName = "IsPalindrome_SingleWordNonPalindrome_ReturnsFalse")]
+        [TestCase("Ben!neB", TestName = "IsPalindrome_NonAlphanumericCharacters_ReturnsTrue")]
+        [TestCase("f o o oof", TestName = "IsPalindrome_WhitespacePalindrome_ReturnsTrue")]
+        [TestCase("A man, a plan, a canal: Panama.", TestName = "IsPalindrome_ComplexPalindrome_ReturnsTrue")]
+        public void IsPalindrome_ValidInput_ReturnsTrue(string input)
         {
-            // Arrange
-            string notPalindrome = "Hello";
+            bool result = Text.Str.IsPalindrome(input);
 
-            // Act
-            bool result = Str.IsPalindrome(notPalindrome);
-
-            // Assert
-            Assert.IsFalse(result);
+            Assert.IsTrue(result, $"Expected true for input: '{input}'");
         }
 
-        [Test]
-        public void IsPalindrome_WithSpacesAndPunctuation_ReturnsTrue()
+        [TestCase("Juan David", TestName = "IsPalindrome_NonPalindromeWithSpace_ReturnsFalse")]
+        [TestCase("AbCd", TestName = "IsPalindrome_MixedCaseNonPalindrome_ReturnsFalse")]
+        public void IsPalindrome_NonPalindrome_ReturnsFalse(string input)
         {
-            // Arrange
-            string stringWithSpacesAndPunctuation = "A man, a plan, a canal: Panama.";
+            bool result = Text.Str.IsPalindrome(input);
 
-            // Act
-            bool result = Str.IsPalindrome(stringWithSpacesAndPunctuation);
-
-            // Assert
-            Assert.IsTrue(result);
-        }
-
-        [Test]
-        public void IsPalindrome_WithEmptyString_ReturnsTrue()
-        {
-            // Arrange
-            string emptyString = "";
-
-            // Act
-            bool result = Str.IsPalindrome(emptyString);
-
-            // Assert
-            Assert.IsTrue(result);
+            Assert.IsFalse(result, $"Expected false for input: '{input}'");
         }
     }
 }
