@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\3-palindrome\\ConsoleApp\\ConsoleApp.csproj",
+      "projectUniqueName": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\3-palindrome\\3-palindrome\\ConsoleApp\\ConsoleApp.csproj",
       "projectName": "ConsoleApp",
-      "projectPath": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\3-palindrome\\ConsoleApp\\ConsoleApp.csproj",
+      "projectPath": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\3-palindrome\\3-palindrome\\ConsoleApp\\ConsoleApp.csproj",
       "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\3-palindrome\\ConsoleApp\\obj\\",
+      "outputPath": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\3-palindrome\\3-palindrome\\ConsoleApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

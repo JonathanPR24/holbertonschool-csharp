@@ -1,4 +1,0 @@
-C:\Users\jonat\holbertonschool-csharp\csharp-tdd\3-palindrome\Text.Tests\obj\Debug\netcoreapp2.1\Text.Tests.csprojAssemblyReference.cache
-C:\Users\jonat\holbertonschool-csharp\csharp-tdd\3-palindrome\Text.Tests\obj\Debug\netcoreapp2.1\Text.Tests.csproj.CoreCompileInputs.cache
-C:\Users\jonat\holbertonschool-csharp\csharp-tdd\3-palindrome\Text.Tests\obj\Debug\netcoreapp2.1\Text.Tests.AssemblyInfoInputs.cache
-C:\Users\jonat\holbertonschool-csharp\csharp-tdd\3-palindrome\Text.Tests\obj\Debug\netcoreapp2.1\Text.Tests.AssemblyInfo.cs

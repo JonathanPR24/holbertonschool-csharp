@@ -1,24 +1,25 @@
 ﻿using System;
-using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace Text
 {
+    /// <summary>
+    /// Provides string manipulation methods.
+    /// </summary>
     public static class Str
     {
+        /// <summary>
+        /// Determines if a given string is a palindrome.
+        /// </summary>
+        /// <param name="s">The input string.</param>
+        /// <returns>True if the string is a palindrome, otherwise false.</returns>
         public static bool IsPalindrome(string s)
         {
-            // Remove spaces and punctuation, and convert to lowercase
-            string cleanedString = Regex.Replace(s, @"[^a-zA-Z]", "").ToLower();
+            // Convert the string to lowercase and remove spaces and punctuation
+            string cleanedString = new string(s.ToLower().Where(c => Char.IsLetterOrDigit(c)).ToArray());
 
-            // Compare the cleaned string with its reverse
-            return cleanedString == ReverseString(cleanedString);
-        }
-
-        private static string ReverseString(string s)
-        {
-            char[] charArray = s.ToCharArray();
-            Array.Reverse(charArray);
-            return new string(charArray);
+            // Check if the cleaned string is equal to its reverse
+            return cleanedString == new string(cleanedString.Reverse().ToArray());
         }
     }
 }
