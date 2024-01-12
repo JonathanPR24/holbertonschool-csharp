@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\3-palindrome\\3-palindrome\\ConsoleApp\\ConsoleApp.csproj": {}
+    "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\3-palindrome\\ConsoleApp\\ConsoleApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\3-palindrome\\3-palindrome\\ConsoleApp\\ConsoleApp.csproj": {
+    "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\3-palindrome\\ConsoleApp\\ConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\3-palindrome\\3-palindrome\\ConsoleApp\\ConsoleApp.csproj",
+        "projectUniqueName": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\3-palindrome\\ConsoleApp\\ConsoleApp.csproj",
         "projectName": "ConsoleApp",
-        "projectPath": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\3-palindrome\\3-palindrome\\ConsoleApp\\ConsoleApp.csproj",
+        "projectPath": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\3-palindrome\\ConsoleApp\\ConsoleApp.csproj",
         "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\3-palindrome\\3-palindrome\\ConsoleApp\\obj\\",
+        "outputPath": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\3-palindrome\\ConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -20,13 +20,14 @@
           "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.1"
+          "net8.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.1": {
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -37,19 +38,25 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.1": {
-          "dependencies": {
-            "Microsoft.NETCore.App": {
-              "target": "Package",
-              "version": "[2.1.0, )",
-              "autoReferenced": true
-            }
-          },
+        "net8.0": {
+          "targetAlias": "net8.0",
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

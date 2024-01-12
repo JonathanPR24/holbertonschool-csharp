@@ -1,47 +1,63 @@
-﻿using System;
-using System.Text;
-
+﻿// File: Text/Str.cs
 namespace Text
 {
     /// <summary>
-    /// Class for string functions.
+    /// Provides methods for working with strings.
     /// </summary>
-    public class Str
+    public static class Str
     {
         /// <summary>
-        /// Checks if a string is a palindrome.
+        /// Determines if a string is a palindrome.
         /// </summary>
-        /// <param name="s">The string to check.</param>
-        /// <returns>True if palindrome, otherwise false.</returns>
+        /// <param name="s">The input string.</param>
+        /// <returns>True if the string is a palindrome, otherwise false.</returns>
         public static bool IsPalindrome(string s)
         {
-            if (s == null)
-            {
-                throw new ArgumentNullException(nameof(s));
-            }
+            // Remove spaces and punctuation, and convert to lowercase
+            string cleanedString = CleanString(s);
 
-            StringBuilder normalized = new StringBuilder();
+            // Check if the cleaned string is a palindrome
+            return IsPalindromeCheck(cleanedString);
+        }
 
+        /// <summary>
+        /// Removes spaces and punctuation from a string and converts it to lowercase.
+        /// </summary>
+        /// <param name="s">The input string.</param>
+        /// <returns>The cleaned string.</returns>
+        private static string CleanString(string s)
+        {
+            // Remove spaces and punctuation, and convert to lowercase
+            string cleanedString = "";
             foreach (char c in s)
             {
-                if (char.IsLetter(c))
+                if (char.IsLetterOrDigit(c))
                 {
-                    normalized.Append(char.ToLower(c));
+                    cleanedString += char.ToLower(c);
                 }
             }
+            return cleanedString;
+        }
 
-            int i = 0;
-            int j = normalized.Length - 1;
+        /// <summary>
+        /// Checks if the given string is a palindrome.
+        /// </summary>
+        /// <param name="s">The input string.</param>
+        /// <returns>True if the string is a palindrome, otherwise false.</returns>
+        private static bool IsPalindromeCheck(string s)
+        {
+            // Check if the string is a palindrome
+            int left = 0;
+            int right = s.Length - 1;
 
-            while (i < j)
+            while (left < right)
             {
-                if (normalized[i] != normalized[j])
+                if (s[left] != s[right])
                 {
                     return false;
                 }
-
-                i++;
-                j--;
+                left++;
+                right--;
             }
 
             return true;
