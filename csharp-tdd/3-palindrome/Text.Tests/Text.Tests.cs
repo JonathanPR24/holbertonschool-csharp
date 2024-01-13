@@ -1,26 +1,37 @@
 using NUnit.Framework;
 
-[TestFixture]
-public class StrTests
+namespace Tests
 {
-    [TestCase("Racecar", true, TestName = "Regular palindrome")]
-    [TestCase("level", true, TestName = "Uppercase + lowercase letters")]
-    [TestCase("A man, a plan, a canal: Panama.", true, TestName = "Punctuation")]
-    [TestCase("Was it a car or a cat I saw?", true, TestName = "Spaces")]
-    [TestCase("", true, TestName = "Empty string")]
-    [TestCase("Hello", false, TestName = "Not a palindrome")]
-    [TestCase("No 'x' in Nixon", true, TestName = "Punctuation + Spaces")]
-    [TestCase("Able ,was I saw eLba", true, TestName = "Uppercase + lowercase letters + Punctuation + Spaces")]
-    public void IsPalindromeTest(string input, bool expectedResult)
+    public class Tests
     {
-        bool result = Text.Str.IsPalindrome(input);
-        Assert.That(result, Is.EqualTo(expectedResult));
-    }
+        [SetUp]
+        public void Setup()
+        {
+            // If you need any setup logic for your tests, you can include it here
+        }
 
-    [Test]
-    public void TestRunSuccessful()
-    {
-        // Add a custom assertion to check for the success message
-        Assert.Pass("Test Run Successful.");
+        [TestCase("abcba", TestName = "Palindrome with lowercase letters")]
+        [TestCase("BananasananaB", TestName = "Palindrome with mixed case letters")]
+        [TestCase("fubaRabuf", TestName = "Palindrome with mixed case letters")]
+        [TestCase("", TestName = "Empty string")]
+        [TestCase("Beneb", TestName = "Palindrome with mixed case letters")]
+        [TestCase("Ben!neB", TestName = "Palindrome with mixed case letters and punctuation")]
+        [TestCase("f o o oof", TestName = "Palindrome with spaces")]
+        [TestCase("A man, a plan, a canal: Panama.", TestName = "Palindrome with spaces and punctuation")]
+        public void IsPalindrome_NormalString_ReturnsTrue(string input)
+        {
+            bool result = Text.Str.IsPalindrome(input);
+
+            Assert.IsTrue(result);
+        }
+
+        [TestCase("Juan David", TestName = "Non-palindrome with mixed case letters")]
+        [TestCase("AbCd", TestName = "Non-palindrome with mixed case letters")]
+        public void IsPalindrome_NormalString_ReturnsFalse(string input)
+        {
+            bool result = Text.Str.IsPalindrome(input);
+
+            Assert.IsFalse(result);
+        }
     }
 }
