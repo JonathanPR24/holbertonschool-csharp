@@ -1,63 +1,36 @@
-﻿// 4-unique/Text/Text.cs
-
-using System;
-using System.Text;
+﻿using System;
 
 namespace Text
 {
-    public static class Str
+    /// <summary>
+    /// Class containing methods for string manipulation.
+    /// </summary>
+    public class Str
     {
-        public static bool IsPalindrome(string s)
-        {
-            // Clean the input string and make it case-insensitive
-            string cleanedString = CleanAndLowercaseString(s);
-
-            // Check if the cleaned string is a palindrome
-            int left = 0;
-            int right = cleanedString.Length - 1;
-
-            while (left < right)
-            {
-                if (cleanedString[left] != cleanedString[right])
-                {
-                    return false;
-                }
-                left++;
-                right--;
-            }
-
-            return true;
-        }
-
+        /// <summary>
+        /// Finds the index of the first non-repeating character in a string.
+        /// </summary>
+        /// <param name="s">The input string.</param>
+        /// <returns>The index of the first unique character, or -1 if none found.</returns>
         public static int UniqueChar(string s)
         {
-            // Return the index of the first non-repeating character or -1 if none.
+            if (s == null)
+                return -1;
+
+            int[] counter = new int[26];
+
+            foreach (char c in s.ToCharArray())
+            {
+                counter[c - 'a'] += 1;
+            }
 
             for (int i = 0; i < s.Length; i++)
             {
-                char currentChar = s[i];
-
-                // Check if the current character is not repeated later in the string
-                if (s.IndexOf(currentChar, i + 1) == -1 && s.LastIndexOf(currentChar) == i)
-                {
-                    return i; // Return the index of the first non-repeating character
-                }
+                if (counter[s[i] - 'a'] == 1)
+                    return i;
             }
 
-            return -1; // If no non-repeating character is found
-        }
-
-        private static string CleanAndLowercaseString(string input)
-        {
-            StringBuilder cleaned = new StringBuilder();
-            foreach (char c in input)
-            {
-                if (char.IsLetterOrDigit(c))
-                {
-                    cleaned.Append(char.ToLower(c));
-                }
-            }
-            return cleaned.ToString();
+            return -1;
         }
     }
 }
