@@ -20,21 +20,14 @@ namespace Text
                 return 0;
             }
 
-            int wordCount = 0;
+            int wordCount = 1; // Assume at least one word (the first one)
 
-            // Check the first character
-            if (char.IsUpper(s[0]))
-            {
-                wordCount++;
-            }
-
-            // Iterate through the rest of the characters
-            for (int i = 1; i < s.Length; i++)
+            foreach (char c in s)
             {
                 // Check if the character is an uppercase letter
-                if (char.IsUpper(s[i]))
+                if (char.IsUpper(c))
                 {
-                    // Increment the word count for each uppercase letter
+                    // Increment the word count for each uppercase letter (except the first one)
                     wordCount++;
                 }
             }
