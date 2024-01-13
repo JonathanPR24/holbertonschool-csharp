@@ -1,45 +1,43 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using System.Text;
 
-[TestClass]
-public class StrTests
+namespace Text
 {
-    [TestMethod]
-    public void IsPalindrome_RegularPalindrome_True()
+    public static class Str
     {
-        string input = "radar";
-        bool result = Str.IsPalindrome(input);
-        Assert.IsTrue(result);
-    }
+        public static bool IsPalindrome(string s)
+        {
+            // Clean the input string and make it case-insensitive
+            string cleanedString = CleanAndLowercaseString(s);
 
-    [TestMethod]
-    public void IsPalindrome_UppercaseLowercaseLetters_True()
-    {
-        string input = "Racecar";
-        bool result = Str.IsPalindrome(input);
-        Assert.IsTrue(result);
-    }
+            // Check if the cleaned string is a palindrome
+            int left = 0;
+            int right = cleanedString.Length - 1;
 
-    [TestMethod]
-    public void IsPalindrome_Punctuation_True()
-    {
-        string input = "A man, a plan, a canal, Panama!";
-        bool result = Str.IsPalindrome(input);
-        Assert.IsTrue(result);
-    }
+            while (left < right)
+            {
+                if (cleanedString[left] != cleanedString[right])
+                {
+                    return false;
+                }
+                left++;
+                right--;
+            }
 
-    [TestMethod]
-    public void IsPalindrome_Spaces_True()
-    {
-        string input = "Was it a car or a cat I saw";
-        bool result = Str.IsPalindrome(input);
-        Assert.IsTrue(result);
-    }
+            return true;
+        }
 
-    [TestMethod]
-    public void IsPalindrome_EmptyString_True()
-    {
-        string input = "";
-        bool result = Str.IsPalindrome(input);
-        Assert.IsTrue(result);
+        private static string CleanAndLowercaseString(string input)
+        {
+            StringBuilder cleaned = new StringBuilder();
+            foreach (char c in input)
+            {
+                if (char.IsLetterOrDigit(c))
+                {
+                    cleaned.Append(char.ToLower(c));
+                }
+            }
+            return cleaned.ToString();
+        }
     }
 }
