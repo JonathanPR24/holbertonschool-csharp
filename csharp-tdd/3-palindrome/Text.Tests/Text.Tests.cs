@@ -1,63 +1,61 @@
 using NUnit.Framework;
+using Text;
 
-namespace Tests
+namespace Text.Tests
 {
-    public class Tests
+    [TestFixture]
+    public class StrTests
     {
         [Test]
-        public void SimpleString()
+        public void IsPalindrome_ValidPalindrome_ReturnsTrue()
         {
-            string str = "abcba";
+            // Arrange
+            string palindrome = "A man, a plan, a canal: Panama.";
 
-            Assert.IsTrue(Text.Str.IsPalindrome(str));
+            // Act
+            bool result = Str.IsPalindrome(palindrome);
+
+            // Assert
+            Assert.IsTrue(result);
         }
 
         [Test]
-        public void IgnoreCase()
+        public void IsPalindrome_ValidNonPalindrome_ReturnsFalse()
         {
-            string str = "AbCba";
+            // Arrange
+            string nonPalindrome = "Hello, World!";
 
-            Assert.IsTrue(Text.Str.IsPalindrome(str));
+            // Act
+            bool result = Str.IsPalindrome(nonPalindrome);
+
+            // Assert
+            Assert.IsFalse(result);
         }
 
         [Test]
-        public void IgnoreCase2()
+        public void IsPalindrome_EmptyString_ReturnsTrue()
         {
-            string str = "Racecar";
+            // Arrange
+            string emptyString = "";
 
-            Assert.IsTrue(Text.Str.IsPalindrome(str));
+            // Act
+            bool result = Str.IsPalindrome(emptyString);
+
+            // Assert
+            Assert.IsTrue(result);
         }
 
         [Test]
-        public void SpacesIgnored()
+        public void IsPalindrome_SingleCharacterString_ReturnsTrue()
         {
-            string str = "Race car";
+            // Arrange
+            string singleCharString = "a";
 
-            Assert.IsTrue(Text.Str.IsPalindrome(str));
-        }
+            // Act
+            bool result = Str.IsPalindrome(singleCharString);
 
-        [Test]
-        public void PunctuationIgnored()
-        {
-            string str = "Aman,aplan,acanal:Panama.";
-
-            Assert.IsTrue(Text.Str.IsPalindrome(str));
-        }
-
-        [Test]
-        public void PunctuationAndSpacesIgnored()
-        {
-            string str = "A man, a plan, a canal: Panama.";
-
-            Assert.IsTrue(Text.Str.IsPalindrome(str));
-        }
-
-        [Test]
-        public void EmptyString()
-        {
-            string str = "";
-
-            Assert.IsTrue(Text.Str.IsPalindrome(str));
+            // Assert
+            Assert.IsTrue(result);
         }
     }
 }
