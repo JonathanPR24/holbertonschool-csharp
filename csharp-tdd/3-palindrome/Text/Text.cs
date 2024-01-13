@@ -1,35 +1,29 @@
-﻿using System;
+﻿﻿using System;
 using System.Linq;
 using System.Text;
 
 namespace Text
 {
-    /// <summary>
-    /// Provides string manipulation tools.
-    /// </summary>
+    ///<summary>Defines string manipulation tools.</summary>
     public class Str
     {
-        /// <summary>
-        /// Checks if a string is a palindrome.
-        /// </summary>
-        /// <param name="s">The string to check.</param>
-        /// <returns>True if the string is a palindrome, false otherwise.</returns>
+        ///<summary>Checks if a string is a palindrome.</summary>
+        ///<param name="s">The string to check.</param>
+        ///<returns>true if the string is a palindrome, false otherwise.</returns>
         public static bool IsPalindrome(string s)
         {
-            // Convert to lowercase and remove spaces
-            string cleanedString = s.ToLower().Replace(" ", "");
-
-            // Remove punctuation
+            s = s.ToLower().Replace(" ", "");
             var sb = new StringBuilder();
-            foreach (char c in cleanedString)
-            {
-                if (!char.IsPunctuation(c))
-                    sb.Append(c);
-            }
-            cleanedString = sb.ToString();
 
-            // Check if it's a palindrome
-            return cleanedString.SequenceEqual(cleanedString.Reverse());
+            foreach (char c in s)
+            {
+            if (!char.IsPunctuation(c))
+                sb.Append(c);
+            }
+
+            s = sb.ToString();
+            
+            return s.SequenceEqual(s.Reverse());
         }
     }
 }
