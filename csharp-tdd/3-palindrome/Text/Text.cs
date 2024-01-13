@@ -15,24 +15,6 @@ namespace Text
         /// <returns>True if the string is a palindrome; otherwise, false.</returns>
         public static bool IsPalindrome(string s)
         {
-            /// <summary>
-            /// Helper function to clean the input string by removing spaces and punctuation and converting to lowercase.
-            /// </summary>
-            /// <param name="input">The input string to be cleaned.</param>
-            /// <returns>The cleaned string.</returns>
-            string CleanString(string input)
-            {
-                StringBuilder cleaned = new StringBuilder();
-                foreach (char c in input)
-                {
-                    if (char.IsLetterOrDigit(c))
-                    {
-                        cleaned.Append(char.ToLower(c));
-                    }
-                }
-                return cleaned.ToString();
-            }
-
             // Clean the input string
             string cleanedString = CleanString(s);
 
@@ -51,6 +33,24 @@ namespace Text
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// Helper function to clean the input string by removing spaces and punctuation and converting to lowercase.
+        /// </summary>
+        /// <param name="input">The input string to be cleaned.</param>
+        /// <returns>The cleaned string.</returns>
+        private static string CleanString(string input)
+        {
+            StringBuilder cleaned = new StringBuilder();
+            foreach (char c in input)
+            {
+                if (char.IsLetterOrDigit(c))
+                {
+                    cleaned.Append(char.ToLower(c));
+                }
+            }
+            return cleaned.ToString();
         }
     }
 }

@@ -16,5 +16,12 @@
             <param name="s">The input string.</param>
             <returns>True if the string is a palindrome; otherwise, false.</returns>
         </member>
+        <member name="M:Text.Str.CleanString(System.String)">
+            <summary>
+            Helper function to clean the input string by removing spaces and punctuation and converting to lowercase.
+            </summary>
+            <param name="input">The input string to be cleaned.</param>
+            <returns>The cleaned string.</returns>
+        </member>
     </members>
 </doc>
