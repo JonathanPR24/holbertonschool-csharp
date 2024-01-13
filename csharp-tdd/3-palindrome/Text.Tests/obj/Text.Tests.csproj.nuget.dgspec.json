@@ -64,6 +64,10 @@
             "coverlet.collector": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "nunit.console": {
+              "target": "Package",
+              "version": "[3.16.3, )"
             }
           },
           "imports": [

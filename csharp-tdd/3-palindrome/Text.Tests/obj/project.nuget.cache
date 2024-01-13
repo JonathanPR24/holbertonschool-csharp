@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XnaKc5cIY5fzDYAMV8S76vRfqyV4zsYqXBOJ1nL01mgLtNQn2YwciK+tlbdq+GXRVsTMIlXOI5/08vIQt3Ypeg==",
+  "dgSpecHash": "o/DzIb0PRiPyMVvnOukBb46+hKVORFqvCLhRaLFXpb0sUCeVTM0TsaDo01g136yxGRuKdgB4R4DoN+SbzA0a/w==",
   "success": true,
   "projectFilePath": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\3-palindrome\\Text.Tests\\Text.Tests.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,13 @@
     "C:\\Users\\jonat\\.nuget\\packages\\nuget.frameworks\\5.11.0\\nuget.frameworks.5.11.0.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\nunit.analyzers\\3.6.1\\nunit.analyzers.3.6.1.nupkg.sha512",
+    "C:\\Users\\jonat\\.nuget\\packages\\nunit.console\\3.16.3\\nunit.console.3.16.3.nupkg.sha512",
+    "C:\\Users\\jonat\\.nuget\\packages\\nunit.consolerunner\\3.16.3\\nunit.consolerunner.3.16.3.nupkg.sha512",
+    "C:\\Users\\jonat\\.nuget\\packages\\nunit.extension.nunitprojectloader\\3.6.0\\nunit.extension.nunitprojectloader.3.6.0.nupkg.sha512",
+    "C:\\Users\\jonat\\.nuget\\packages\\nunit.extension.nunitv2driver\\3.8.0\\nunit.extension.nunitv2driver.3.8.0.nupkg.sha512",
+    "C:\\Users\\jonat\\.nuget\\packages\\nunit.extension.nunitv2resultwriter\\3.6.0\\nunit.extension.nunitv2resultwriter.3.6.0.nupkg.sha512",
+    "C:\\Users\\jonat\\.nuget\\packages\\nunit.extension.teamcityeventlistener\\1.0.7\\nunit.extension.teamcityeventlistener.1.0.7.nupkg.sha512",
+    "C:\\Users\\jonat\\.nuget\\packages\\nunit.extension.vsprojectloader\\3.8.0\\nunit.extension.vsprojectloader.3.8.0.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\nunit3testadapter\\4.2.1\\nunit3testadapter.4.2.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512"
   ],
