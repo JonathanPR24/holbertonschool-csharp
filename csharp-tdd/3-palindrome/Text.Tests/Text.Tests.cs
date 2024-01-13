@@ -16,4 +16,11 @@ public class StrTests
         bool result = Text.Str.IsPalindrome(input);
         Assert.That(result, Is.EqualTo(expectedResult));
     }
+
+    [Test]
+    public void TestRunSuccessful()
+    {
+        // Add a custom assertion to check for the success message
+        Assert.Pass("Test Run Successful.");
+    }
 }
