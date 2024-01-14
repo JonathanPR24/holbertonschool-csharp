@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XnaKc5cIY5fzDYAMV8S76vRfqyV4zsYqXBOJ1nL01mgLtNQn2YwciK+tlbdq+GXRVsTMIlXOI5/08vIQt3Ypeg==",
+  "dgSpecHash": "AI4M5ASqrob2J03CkHP/4djIF3X+Mm5xe5v9Ho+w7Y/Zpzkt9u3Gi7uUM2WtLLSzdI9/PrfFQvFmbI7+kjLOnA==",
   "success": true,
   "projectFilePath": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\3-palindrome\\Text.Tests\\Text.Tests.csproj",
   "expectedPackageFiles": [

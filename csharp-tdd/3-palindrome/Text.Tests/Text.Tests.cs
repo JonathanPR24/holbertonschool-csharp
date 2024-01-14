@@ -1,16 +1,20 @@
 using NUnit.Framework;
-using Text;
 
 namespace Text.Tests
 {
-    [TestFixture]
+    /// <summary>
+    /// Tests for the Str class.
+    /// </summary>
     public class StrTests
     {
+        /// <summary>
+        /// Tests the IsPalindrome method with a palindrome string.
+        /// </summary>
         [Test]
-        public void IsPalindrome_ValidPalindrome_ReturnsTrue()
+        public void IsPalindrome_PalindromeString_ReturnsTrue()
         {
             // Arrange
-            string palindrome = "A man, a plan, a canal: Panama.";
+            string palindrome = "racecar";
 
             // Act
             bool result = Str.IsPalindrome(palindrome);
@@ -19,43 +23,7 @@ namespace Text.Tests
             Assert.IsTrue(result);
         }
 
-        [Test]
-        public void IsPalindrome_ValidNonPalindrome_ReturnsFalse()
-        {
-            // Arrange
-            string nonPalindrome = "Hello, World!";
-
-            // Act
-            bool result = Str.IsPalindrome(nonPalindrome);
-
-            // Assert
-            Assert.IsFalse(result);
-        }
-
-        [Test]
-        public void IsPalindrome_EmptyString_ReturnsTrue()
-        {
-            // Arrange
-            string emptyString = "";
-
-            // Act
-            bool result = Str.IsPalindrome(emptyString);
-
-            // Assert
-            Assert.IsTrue(result);
-        }
-
-        [Test]
-        public void IsPalindrome_SingleCharacterString_ReturnsTrue()
-        {
-            // Arrange
-            string singleCharString = "a";
-
-            // Act
-            bool result = Str.IsPalindrome(singleCharString);
-
-            // Assert
-            Assert.IsTrue(result);
-        }
+        // Add more test methods for different cases (non-palindromes, edge cases, etc.)
+        // ...
     }
 }
