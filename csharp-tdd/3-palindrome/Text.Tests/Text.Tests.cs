@@ -5,57 +5,57 @@ namespace Tests
     public class Tests
     {
         [Test]
-        public void SimpleString()
+        public void SimplePalindrome()
         {
-            string str = "abcba";
+            string str = "radar";
 
             Assert.IsTrue(Text.Str.IsPalindrome(str));
         }
 
         [Test]
-        public void IgnoreCase()
+        public void NonPalindrome()
         {
-            string str = "AbCba";
+            string str = "hello";
+
+            Assert.IsFalse(Text.Str.IsPalindrome(str));
+        }
+
+        [Test]
+        public void SingleCharacter()
+        {
+            string str = "a";
 
             Assert.IsTrue(Text.Str.IsPalindrome(str));
         }
 
         [Test]
-        public void IgnoreCase2()
+        public void NullString()
         {
-            string str = "Racecar";
+            string str = null;
+
+            Assert.IsFalse(Text.Str.IsPalindrome(str));
+        }
+
+        [Test]
+        public void MixedCasePalindrome()
+        {
+            string str = "RacECar";
 
             Assert.IsTrue(Text.Str.IsPalindrome(str));
         }
 
         [Test]
-        public void SpacesIgnored()
+        public void SpecialCharactersPalindrome()
         {
-            string str = "Race car";
+            string str = "!@#$%^&*()(*&^%$#@!";
 
             Assert.IsTrue(Text.Str.IsPalindrome(str));
         }
 
         [Test]
-        public void PunctuationIgnored()
+        public void LongPalindrome()
         {
-            string str = "Aman,aplan,acanal:Panama.";
-
-            Assert.IsTrue(Text.Str.IsPalindrome(str));
-        }
-
-        [Test]
-        public void PunctuationAndSpacesIgnored()
-        {
-            string str = "A man, a plan, a canal: Panama.";
-
-            Assert.IsTrue(Text.Str.IsPalindrome(str));
-        }
-
-        [Test]
-        public void EmptyString()
-        {
-            string str = "";
+            string str = "A man, a plan, a canal, Panama. A man, a plan, a canal, Panama.";
 
             Assert.IsTrue(Text.Str.IsPalindrome(str));
         }
