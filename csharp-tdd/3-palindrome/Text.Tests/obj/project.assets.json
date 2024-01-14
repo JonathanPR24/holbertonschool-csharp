@@ -381,6 +381,16 @@
             "related": ".xml"
           }
         }
+      },
+      "Text/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Text.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Text.dll": {}
+        }
       }
     }
   },
@@ -974,6 +984,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Text/1.0.0": {
+      "type": "project",
+      "path": "../Text/Text.csproj",
+      "msbuildProject": "../Text/Text.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -982,6 +997,7 @@
       "NUnit >= 3.13.3",
       "NUnit.Analyzers >= 3.6.1",
       "NUnit3TestAdapter >= 4.2.1",
+      "Text >= 1.0.0",
       "coverlet.collector >= 6.0.0"
     ]
   },
@@ -1013,7 +1029,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\3-palindrome\\Text\\Text.csproj": {
+              "projectPath": "C:\\Users\\jonat\\holbertonschool-csharp\\csharp-tdd\\3-palindrome\\Text\\Text.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

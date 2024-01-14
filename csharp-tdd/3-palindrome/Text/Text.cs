@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Text
 {
@@ -16,9 +17,15 @@ namespace Text
         {
             // Implementation of the palindrome check
             // (Case-insensitive, ignoring spaces and punctuation)
-            // ...
+            
+            // Remove spaces and punctuation from the string
+            string cleanString = new string(s.Where(c => Char.IsLetterOrDigit(c)).ToArray());
 
-            return result; // Replace with your actual implementation
+            // Convert to lowercase for case-insensitive comparison
+            cleanString = cleanString.ToLower();
+
+            // Compare the original and reversed strings
+            return cleanString == new string(cleanString.Reverse().ToArray());
         }
     }
 }
