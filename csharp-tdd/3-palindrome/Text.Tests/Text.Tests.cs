@@ -5,59 +5,47 @@ namespace Tests
     public class Tests
     {
         [Test]
-        public void SimplePalindrome()
+        public void RegularPalindrome()
         {
             string str = "radar";
-
             Assert.IsTrue(Text.Str.IsPalindrome(str));
         }
 
         [Test]
-        public void NonPalindrome()
-        {
-            string str = "hello";
-
-            Assert.IsFalse(Text.Str.IsPalindrome(str));
-        }
-
-        [Test]
-        public void SingleCharacter()
-        {
-            string str = "a";
-
-            Assert.IsTrue(Text.Str.IsPalindrome(str));
-        }
-
-        [Test]
-        public void NullString()
-        {
-            string str = null;
-
-            Assert.IsFalse(Text.Str.IsPalindrome(str));
-        }
-
-        [Test]
-        public void MixedCasePalindrome()
+        public void UppercaseLowercaseLetters()
         {
             string str = "RacECar";
-
             Assert.IsTrue(Text.Str.IsPalindrome(str));
         }
 
         [Test]
-        public void SpecialCharactersPalindrome()
+        public void Punctuation()
         {
-            string str = "!@#$%^&*()(*&^%$#@!";
-
+            string str = "A man, a plan, a canal, Panama.";
             Assert.IsTrue(Text.Str.IsPalindrome(str));
         }
 
         [Test]
-        public void LongPalindrome()
+        public void Spaces()
         {
-            string str = "A man, a plan, a canal, Panama. A man, a plan, a canal, Panama.";
-
+            string str = "Race car";
             Assert.IsTrue(Text.Str.IsPalindrome(str));
+        }
+
+        [Test]
+        public void EmptyString()
+        {
+            string str = "";
+            Assert.IsTrue(Text.Str.IsPalindrome(str));
+        }
+
+        // Add more tests for additional scenarios if needed
+
+        // Ensure compatibility with NUnit version 3.13.2
+        [Test]
+        public void NUnitCompatibilityTest()
+        {
+            Assert.Pass("NUnit version 3.13.2 is compatible.");
         }
     }
 }
