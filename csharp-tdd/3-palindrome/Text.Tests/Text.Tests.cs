@@ -1,29 +1,63 @@
 using NUnit.Framework;
 
-namespace Text.Tests
+namespace Tests
 {
-    /// <summary>
-    /// Tests for the Str class.
-    /// </summary>
-    public class StrTests
+    public class Tests
     {
-        /// <summary>
-        /// Tests the IsPalindrome method with a palindrome string.
-        /// </summary>
         [Test]
-        public void IsPalindrome_PalindromeString_ReturnsTrue()
+        public void SimpleString()
         {
-            // Arrange
-            string palindrome = "racecar";
+            string str = "abcba";
 
-            // Act
-            bool result = Str.IsPalindrome(palindrome);
-
-            // Assert
-            Assert.IsTrue(result);
+            Assert.IsTrue(Text.Str.IsPalindrome(str));
         }
 
-        // Add more test methods for different cases (non-palindromes, edge cases, etc.)
-        // ...
+        [Test]
+        public void IgnoreCase()
+        {
+            string str = "AbCba";
+
+            Assert.IsTrue(Text.Str.IsPalindrome(str));
+        }
+
+        [Test]
+        public void IgnoreCase2()
+        {
+            string str = "Racecar";
+
+            Assert.IsTrue(Text.Str.IsPalindrome(str));
+        }
+
+        [Test]
+        public void SpacesIgnored()
+        {
+            string str = "Race car";
+
+            Assert.IsTrue(Text.Str.IsPalindrome(str));
+        }
+
+        [Test]
+        public void PunctuationIgnored()
+        {
+            string str = "Aman,aplan,acanal:Panama.";
+
+            Assert.IsTrue(Text.Str.IsPalindrome(str));
+        }
+
+        [Test]
+        public void PunctuationAndSpacesIgnored()
+        {
+            string str = "A man, a plan, a canal: Panama.";
+
+            Assert.IsTrue(Text.Str.IsPalindrome(str));
+        }
+
+        [Test]
+        public void EmptyString()
+        {
+            string str = "";
+
+            Assert.IsTrue(Text.Str.IsPalindrome(str));
+        }
     }
 }
