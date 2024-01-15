@@ -1,0 +1,16 @@
+C:\Users\jonat\holbertonschool-csharp\csharp-inheritance\0-is\bin\Debug\net5.0\0-is.exe
+C:\Users\jonat\holbertonschool-csharp\csharp-inheritance\0-is\bin\Debug\net5.0\0-is.deps.json
+C:\Users\jonat\holbertonschool-csharp\csharp-inheritance\0-is\bin\Debug\net5.0\0-is.runtimeconfig.json
+C:\Users\jonat\holbertonschool-csharp\csharp-inheritance\0-is\bin\Debug\net5.0\0-is.runtimeconfig.dev.json
+C:\Users\jonat\holbertonschool-csharp\csharp-inheritance\0-is\bin\Debug\net5.0\0-is.dll
+C:\Users\jonat\holbertonschool-csharp\csharp-inheritance\0-is\bin\Debug\net5.0\0-is.pdb
+C:\Users\jonat\holbertonschool-csharp\csharp-inheritance\0-is\obj\Debug\net5.0\0-is.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jonat\holbertonschool-csharp\csharp-inheritance\0-is\obj\Debug\net5.0\0-is.AssemblyInfoInputs.cache
+C:\Users\jonat\holbertonschool-csharp\csharp-inheritance\0-is\obj\Debug\net5.0\0-is.AssemblyInfo.cs
+C:\Users\jonat\holbertonschool-csharp\csharp-inheritance\0-is\obj\Debug\net5.0\0-is.csproj.CoreCompileInputs.cache
+C:\Users\jonat\holbertonschool-csharp\csharp-inheritance\0-is\obj\Debug\net5.0\0-is.sourcelink.json
+C:\Users\jonat\holbertonschool-csharp\csharp-inheritance\0-is\obj\Debug\net5.0\0-is.dll
+C:\Users\jonat\holbertonschool-csharp\csharp-inheritance\0-is\obj\Debug\net5.0\refint\0-is.dll
+C:\Users\jonat\holbertonschool-csharp\csharp-inheritance\0-is\obj\Debug\net5.0\0-is.pdb
+C:\Users\jonat\holbertonschool-csharp\csharp-inheritance\0-is\obj\Debug\net5.0\0-is.genruntimeconfig.cache
+C:\Users\jonat\holbertonschool-csharp\csharp-inheritance\0-is\obj\Debug\net5.0\ref\0-is.dll
