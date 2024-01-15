@@ -3,7 +3,7 @@ using System;
 /// <summary>
 /// Represents a class with a method to check if an object is of type int.
 /// </summary>
-public class Obj
+class Obj
 {
     /// <summary>
     /// Checks if the object is of type int.
