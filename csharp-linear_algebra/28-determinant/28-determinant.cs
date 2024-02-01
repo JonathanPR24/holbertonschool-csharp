@@ -1,37 +1,36 @@
 ﻿using System;
 
-/// <summary>
-/// Provides methods for matrix calculations.
-/// </summary>
-public class MatrixMath
+class MatrixMath
 {
     /// <summary>
-    /// Calculates the determinant of a matrix.
+    /// Calculates the determinant of a 2x2 or 3x3 matrix.
     /// </summary>
-    /// <param name="matrix">The matrix for which to calculate the determinant.</param>
-    /// <returns>The determinant of the matrix or -1 if the matrix is not 2D or 3D.</returns>
+    /// <param name="matrix">The matrix to calculate the determinant for.</param>
+    /// <returns>The determinant rounded to the nearest hundredth, or -1 if the matrix is invalid.</returns>
     public static double Determinant(double[,] matrix)
     {
-        int rows = matrix.GetLength(0);
-        int cols = matrix.GetLength(1);
-
-        // Check if the matrix is not 2D or 3D
-        if (rows != 2 && rows != 3 && cols != 2 && cols != 3)
+        if (matrix.Length != 4 && matrix.Length != 9)
             return -1;
 
-        double determinant = 0;
+        // Checks if matrix is 2D or 3D
+        if ((matrix.GetLength(0) != 2 && matrix.GetLength(0) != 3) || (matrix.GetLength(1) != 2 && matrix.GetLength(1) != 3))
+            return -1;
 
-        if (rows == 2 && cols == 2)
+        if (matrix.Length == 4)
         {
-            determinant = matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0];
+            return Math.Round(matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0], 2);
         }
-        else if (rows == 3 && cols == 3)
+        else if (matrix.Length == 9)
         {
-            determinant = matrix[0, 0] * (matrix[1, 1] * matrix[2, 2] - matrix[1, 2] * matrix[2, 1]) -
-                           matrix[0, 1] * (matrix[1, 0] * matrix[2, 2] - matrix[1, 2] * matrix[2, 0]) +
-                           matrix[0, 2] * (matrix[1, 0] * matrix[2, 1] - matrix[1, 1] * matrix[2, 0]);
+            return Math.Round(matrix[0, 0] * matrix[1, 1] * matrix[2, 2] +
+               matrix[0, 1] * matrix[1, 2] * matrix[2, 0] +
+               matrix[0, 2] * matrix[1, 0] * matrix[2, 1] -
+               matrix[0, 2] * matrix[1, 1] * matrix[2, 0] -
+               matrix[0, 1] * matrix[1, 0] * matrix[2, 2] -
+               matrix[0, 0] * matrix[1, 2] * matrix[2, 1], 2);
         }
 
-        return determinant;
+        // Unreachable code, but added for completeness
+        return -1;
     }
 }
