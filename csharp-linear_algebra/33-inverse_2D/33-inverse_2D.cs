@@ -16,8 +16,14 @@ class MatrixMath
             return new double[,] { { -1 } };
         }
 
+        // Extract matrix elements
+        double a = matrix[0, 0];
+        double b = matrix[0, 1];
+        double c = matrix[1, 0];
+        double d = matrix[1, 1];
+
         // Calculate determinant
-        double determinant = matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0];
+        double determinant = a * d - b * c;
 
         // Check if the matrix is non-invertible
         if (Math.Abs(determinant) < double.Epsilon)
@@ -28,10 +34,10 @@ class MatrixMath
 
         // Calculate inverse
         double[,] inverseMatrix = new double[2, 2];
-        inverseMatrix[0, 0] = matrix[1, 1] / determinant;
-        inverseMatrix[0, 1] = -matrix[0, 1] / determinant;
-        inverseMatrix[1, 0] = -matrix[1, 0] / determinant;
-        inverseMatrix[1, 1] = matrix[0, 0] / determinant;
+        inverseMatrix[0, 0] = Math.Round(d / determinant, 2);
+        inverseMatrix[0, 1] = Math.Round(-b / determinant, 2);
+        inverseMatrix[1, 0] = Math.Round(-c / determinant, 2);
+        inverseMatrix[1, 1] = Math.Round(a / determinant, 2);
 
         return inverseMatrix;
     }
