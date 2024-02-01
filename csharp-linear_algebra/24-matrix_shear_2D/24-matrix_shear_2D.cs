@@ -1,9 +1,6 @@
 ﻿using System;
 
-/// <summary>
-/// Provides methods for matrix calculations.
-/// </summary>
-public class MatrixMath
+class MatrixMath
 {
     /// <summary>
     /// Shears a square 2D matrix by a given shear factor in the X or Y direction.
@@ -14,41 +11,32 @@ public class MatrixMath
     /// <returns>The resulting sheared matrix or a matrix containing -1 if the matrix is of an invalid size or an invalid direction is given.</returns>
     public static double[,] Shear2D(double[,] matrix, char direction, double factor)
     {
-        int rows = matrix.GetLength(0);
-        int cols = matrix.GetLength(1);
+        // Identity shear matrix
+        double[,] shearMat = { { 1, 0 }, { 0, 1 } };
+        double[,] shearedMat = new double[2, 2];
+        int numLines = matrix.GetLength(0);
 
-        // Check if the matrix is square
-        if (rows != cols)
-        {
+        // Check for valid direction
+        if (direction != 'x' && direction != 'y')
             return new double[,] { { -1 } };
-        }
 
-        double[,] shearedMatrix = new double[rows, cols];
+        // Check for valid matrix size
+        if (matrix.Length != 4 || matrix.GetLength(0) != 2)
+            return new double[,] { { -1 } };
 
+        // Update shear matrix based on direction and factor
         if (direction == 'x')
-        {
-            // Shear in the X direction
-            for (int i = 0; i < rows; i++)
-            {
-                shearedMatrix[i, 0] = matrix[i, 0] + factor * matrix[i, 1];
-                shearedMatrix[i, 1] = matrix[i, 1];
-            }
-        }
-        else if (direction == 'y')
-        {
-            // Shear in the Y direction
-            for (int i = 0; i < rows; i++)
-            {
-                shearedMatrix[i, 0] = matrix[i, 0];
-                shearedMatrix[i, 1] = matrix[i, 0] * factor + matrix[i, 1];
-            }
-        }
+            shearMat[0, 1] = factor;
         else
+            shearMat[1, 0] = factor;
+
+        // Apply shear transformation to each row of the matrix
+        for (int i = 0; i < numLines; i++)
         {
-            // Invalid direction
-            return new double[,] { { -1 } };
+            shearedMat[i, 0] = shearMat[0, 0] * matrix[i, 0] + shearMat[0, 1] * matrix[i, 1];
+            shearedMat[i, 1] = shearMat[1, 0] * matrix[i, 0] + shearMat[1, 1] * matrix[i, 1];
         }
 
-        return shearedMatrix;
+        return shearedMat;
     }
 }
