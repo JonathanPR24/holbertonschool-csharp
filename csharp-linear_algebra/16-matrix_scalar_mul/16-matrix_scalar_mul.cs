@@ -1,43 +1,30 @@
 ﻿using System;
 
-/// <summary>
-/// Provides methods for matrix calculations.
-/// </summary>
-public class MatrixMath
+///<summary>Defines matrix calculation methods.</summary>
+class MatrixMath
 {
-    /// <summary>
-    /// Multiplies a matrix by a scalar and returns the resulting matrix.
-    /// </summary>
-    /// <param name="matrix">The matrix (2D or 3D) to be multiplied.</param>
-    /// <param name="scalar">The scalar value by which to multiply the matrix.</param>
-    /// <returns>The resulting matrix or a matrix containing -1 if the input matrix is not 2D or 3D.</returns>
+    ///<summary>Multiplies a matrix and a scalar.</summary>
+    ///<param name="matrix">The matrix.</param>
+    ///<param name="scalar">The scalar.</param>
+    ///<returns>The resulting matrix.</returns>
     public static double[,] MultiplyScalar(double[,] matrix, double scalar)
     {
-        if (!IsMatrixValid(matrix))
-        {
-            // Return a matrix containing -1 if the input matrix is not valid.
+        // Checks if matrix is a square matrix
+        if (matrix.Length != 4 && matrix.Length != 9)
             return new double[,] { { -1 } };
-        }
 
-        int rows = matrix.GetLength(0);
-        int columns = matrix.GetLength(1);
+        // Checks if matrix is 2D or 3D
+        if ((matrix.GetLength(0) != 2 || matrix.GetLength(1) != 2) && (matrix.GetLength(0) != 3 || matrix.GetLength(1) != 3))
+            return new double[,] { { -1 } };
 
-        double[,] result = new double[rows, columns];
-
-        for (int i = 0; i < rows; i++)
+        for (int i = 0; i < matrix.GetLength(0); i++)
         {
-            for (int j = 0; j < columns; j++)
+            for (int j = 0; j < matrix.GetLength(1); j++)
             {
-                result[i, j] = matrix[i, j] * scalar;
+                matrix[i, j] *= scalar;
             }
         }
 
-        return result;
-    }
-
-    // Helper method to check if a matrix is 2D or 3D
-    private static bool IsMatrixValid(double[,] matrix)
-    {
-        return matrix.Rank == 2 && (matrix.GetLength(0) == 2 || matrix.GetLength(0) == 3);
+        return matrix;
     }
 }
