@@ -13,33 +13,27 @@ public class MatrixMath
     /// <returns>The resulting rotated matrix or a matrix containing -1 if the matrix is of an invalid size.</returns>
     public static double[,] Rotate2D(double[,] matrix, double angle)
     {
+        int rows = matrix.GetLength(0);
+        int cols = matrix.GetLength(1);
+
         // Check if the matrix is square and has a size of 2x2
-        if (matrix.GetLength(0) != 2 || matrix.GetLength(1) != 2)
+        if (rows != cols || rows != 2 || cols != 2)
         {
             // Return a matrix containing -1 if the matrix is of an invalid size
             return new double[,] { { -1 } };
         }
 
-        double[,] result = new double[2, 2];
+        double[,] rotatedMatrix = new double[rows, cols];
 
-        // Rotation matrix for 2D rotation
-        double[,] rotationMatrix = {
-            { Math.Cos(angle), -Math.Sin(angle) },
-            { Math.Sin(angle), Math.Cos(angle) }
-        };
-
-        // Multiply the original matrix by the rotation matrix
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < rows; i++)
         {
-            for (int j = 0; j < 2; j++)
+            for (int j = 0; j < cols; j++)
             {
-                for (int k = 0; k < 2; k++)
-                {
-                    result[i, j] += matrix[i, k] * rotationMatrix[k, j];
-                }
+                // Apply rotation to each element in the matrix
+                rotatedMatrix[i, j] = matrix[i, j] * Math.Cos(angle) - matrix[i, 1 - j] * Math.Sin(angle);
             }
         }
 
-        return result;
+        return rotatedMatrix;
     }
 }
