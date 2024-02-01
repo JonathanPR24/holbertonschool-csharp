@@ -16,10 +16,9 @@ public class MatrixMath
         int rows = matrix.GetLength(0);
         int cols = matrix.GetLength(1);
 
-        // Check if the matrix is square and has a size of 2x2
-        if (rows != cols || rows != 2 || cols != 2)
+        // Check if the matrix is square and has a valid size (2x2)
+        if (rows != 2 || cols != 2)
         {
-            // Return a matrix containing -1 if the matrix is of an invalid size
             return new double[,] { { -1 } };
         }
 
@@ -27,11 +26,11 @@ public class MatrixMath
 
         for (int i = 0; i < rows; i++)
         {
-            for (int j = 0; j < cols; j++)
-            {
-                // Apply rotation to each element in the matrix
-                rotatedMatrix[i, j] = matrix[i, j] * Math.Cos(angle) - matrix[i, 1 - j] * Math.Sin(angle);
-            }
+            double x = matrix[i, 0];
+            double y = matrix[i, 1];
+
+            rotatedMatrix[i, 0] = Math.Round(x * Math.Cos(angle) - y * Math.Sin(angle), 2);
+            rotatedMatrix[i, 1] = Math.Round(x * Math.Sin(angle) + y * Math.Cos(angle), 2);
         }
 
         return rotatedMatrix;
