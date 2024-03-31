@@ -1,57 +1,74 @@
 ﻿using System;
 
-// Base class
+/// <summary>
+/// Abstract base class representing an entity.
+/// </summary>
 abstract class Base
 {
+    /// <summary>
+    /// Gets or sets the name of the entity.
+    /// </summary>
     public string name = "";
 
+    /// <summary>
+    /// Overrides the ToString method to provide custom string representation.
+    /// </summary>
+    /// <returns>A string representing the name and type of the entity.</returns>
     public override string ToString()
     {
         return $"{name} is a {GetType()}";
     }
 }
 
-// Interactive interface
+/// <summary>
+/// Interactive interface
+/// </summary>
 interface IInteractive
 {
     void Interact();
 }
 
-// Breakable Interface
+/// <summary>
+/// Breakable Interface
+/// </summary>
 interface IBreakable
 {
     int durability { get; set; }
     void Break();
 }
 
-// Collectable Interface
+/// <summary>
+/// Collectable Interface
+/// </summary>
 interface ICollectable
 {
     bool isCollected { get; set; }
     void Collect();
 }
 
-// Class that inherits from Base class and all interfaces
+/// <summary>
+/// Class that inherits from Base class and all interfaces
+/// </summary>
 class TestObject : Base, IInteractive, IBreakable, ICollectable
 {
     public int durability { get; set; }
     public bool isCollected { get; set; }
 
-    // Takes place when the object interacts with something
     public void Interact()
     {
+        // Implementation for Interact method
         Console.WriteLine("Interacting...");
     }
 
-    // Takes place when the object breaks
     public void Break()
     {
+        // Implementation for Break method
         Console.WriteLine("Breaking...");
     }
 
-    // Takes place when the object collects something
     public void Collect()
     {
+        // Implementation for Collect method
         Console.WriteLine("Collecting...");
     }
 }
