@@ -8,7 +8,7 @@ abstract class Base
     /// <summary>
     /// Gets or sets the name of the entity.
     /// </summary>
-    protected string name = "";
+    public string name = "";
 
     /// <summary>
     /// Overrides the ToString method to provide custom string representation.
