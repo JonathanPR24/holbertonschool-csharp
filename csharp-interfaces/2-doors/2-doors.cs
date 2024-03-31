@@ -8,6 +8,14 @@ abstract class Base
     public string name { get; set; }
 
     /// <summary>
+    /// Constructor for the base class.
+    /// </summary>
+    public Base(string name = "Door")
+    {
+        this.name = name;
+    }
+
+    /// <summary>
     /// Convert the object to a string.
     /// </summary>
     public override string ToString()
@@ -36,9 +44,8 @@ class Door : Base, IInteractive
     /// Constructor for the Door class.
     /// </summary>
     /// <param name="name">The name of the door.</param>
-    public Door(string name = "Door")
+    public Door(string name = "Door") : base(name)
     {
-        this.name = name;
     }
 
     /// <summary>
