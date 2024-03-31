@@ -12,6 +12,8 @@ public class Player
     /// <summary>
     /// Constructor for player object.
     /// </summary>
+    /// <param name="name">Player's name</param>
+    /// <param name="maxHp">Player's maximum hit points</param>
     public Player(string name = "Player", float maxHp = 100f)
     {
         this.name = name;
