@@ -3,11 +3,11 @@
 ///<summary>Base class</summary>
 abstract class Base
 {
-    public string Name { get; set; }
+    public string name = "";
 
     public override string ToString()
     {
-        return $"{Name} is a {this.GetType().Name}";
+        return $"{name} is a {GetType().Name}";
     }
 }
 
@@ -20,35 +20,38 @@ interface IInteractive
 /// <summary> Breakable Interface </summary>
 interface IBreakable
 {
-    int Durability { get; set; }
+    int durability { get; set; }
     void Break();
 }
 
 /// <summary> Collectable Interface </summary>
 interface ICollectable
 {
-    bool IsCollected { get; set; }
+    bool isCollected { get; set; }
     void Collect();
 }
 
 /// <summary> Class that inherits from Base class and all interfaces </summary>
 class TestObject : Base, IInteractive, IBreakable, ICollectable
 {
-    public int Durability { get; set; }
-    public bool IsCollected { get; set; }
+    public int durability { get; set; }
+    public bool isCollected { get; set; }
 
+    /// <summary> Takes place when the object interacts with something </summary>
     public void Interact()
     {
-        Console.WriteLine("Interacting...");
+        // Implementation for Interact method
     }
 
+    /// <summary> Takes place when the object breaks. </summary>
     public void Break()
     {
-        Console.WriteLine("Breaking...");
+        // Implementation for Break method
     }
 
+    /// <summary> Takes place when the object collects something.</summary>
     public void Collect()
     {
-        Console.WriteLine("Collecting...");
+        // Implementation for Collect method
     }
 }
