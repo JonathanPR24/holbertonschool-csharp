@@ -1,29 +1,25 @@
-﻿using System;
+﻿﻿using System;
 
 /// <summary>
-/// Represents a player.
+/// Represents an entity in the game.
 /// </summary>
 public class Player
 {
-    private string name { get; set; }
-    private float maxHp { get; set; }
-    private float hp { get; set; }
+    string name { get; set; }
+    float maxHp { get; set; }
+    float hp { get; set; }
 
     /// <summary>
-    /// Constructor for player object.
+    /// Initializes a new instance of the Player class.
     /// </summary>
-    /// <param name="name">Player's name</param>
-    /// <param name="maxHp">Player's maximum hit points</param>
-    public Player(string name = "Player", float maxHp = 100f)
-    {
+    /// <param name="name">The name of the player.</param>
+    /// <param name="maxHp">The maximum health points of the player.</param>
+    public Player(string name = "Player", float maxHp = 100f) {
         this.name = name;
 
-        if (maxHp > 0)
-        {
+        if (maxHp > 0) {
             this.maxHp = maxHp;
-        }
-        else
-        {
+        } else {
             this.maxHp = 100f;
             Console.WriteLine("maxHp must be greater than 0. maxHp set to 100f by default.");
         }
@@ -31,10 +27,10 @@ public class Player
     }
 
     /// <summary>
-    /// Prints the health of the player.
+    /// Prints the current health of the player.
     /// </summary>
-    public void PrintHealth()
-    {
+    public void PrintHealth() {
         Console.WriteLine($"{name} has {hp} / {maxHp} health");
     }
+
 }
