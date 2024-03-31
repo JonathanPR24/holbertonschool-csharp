@@ -1,35 +1,9 @@
 ﻿using System;
 
-// Interface for interactive objects
-interface IInteractive
-{
-    void Interact();
-}
-
-// Interface for breakable objects
-interface IBreakable
-{
-    int Durability { get; set; }
-    void Break();
-}
-
-// Interface for collectable objects
-interface ICollectable
-{
-    bool IsCollected { get; set; }
-    void Collect();
-}
-
-// Base class representing an entity
+// Base class
 abstract class Base
 {
-    protected string name = "";
-
-    public string Name
-    {
-        get { return name; }
-        set { name = value; }
-    }
+    public string name = "";
 
     public override string ToString()
     {
@@ -37,28 +11,66 @@ abstract class Base
     }
 }
 
-// Class representing a test object that inherits from Base and implements the interfaces
+// Interactive interface
+interface IInteractive
+{
+    void Interact();
+}
+
+// Breakable Interface
+interface IBreakable
+{
+    int durability { get; set; }
+    void Break();
+}
+
+// Collectable Interface
+interface ICollectable
+{
+    bool isCollected { get; set; }
+    void Collect();
+}
+
+// Class that inherits from Base class and all interfaces
 class TestObject : Base, IInteractive, IBreakable, ICollectable
 {
-    // Properties for IBreakable interface
-    public int Durability { get; set; }
+    public int durability { get; set; }
+    public bool isCollected { get; set; }
 
-    // Properties for ICollectable interface
-    public bool IsCollected { get; set; }
-
-    // Method implementations for interfaces
+    // Takes place when the object interacts with something
     public void Interact()
     {
-        // Implementation for interact method
+        Console.WriteLine("Interacting...");
     }
 
+    // Takes place when the object breaks
     public void Break()
     {
-        // Implementation for break method
+        Console.WriteLine("Breaking...");
     }
 
+    // Takes place when the object collects something
     public void Collect()
     {
-        // Implementation for collect method
+        Console.WriteLine("Collecting...");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        TestObject item = new TestObject();
+        Type type = item.GetType();
+
+        Console.WriteLine("Type: " + type);
+
+        Console.WriteLine("Properties:");
+        foreach (var property in type.GetProperties())
+            Console.WriteLine(property.Name);
+
+        Console.WriteLine("Methods:");
+        foreach (var method in type.GetMethods())
+            Console.WriteLine(method.Name);
     }
 }
