@@ -1,32 +1,35 @@
-﻿///<summary>Class for queue operations</summary>
-/// <typeparam name="T">Type parameter</typeparam>
-class Queue<T>
+﻿using System;
+
+///<summary>Represents a generic queue.</summary>
+public class Queue<T>
 {
-    ///<summary>Check if it's a queue type</summary>
-    ///<returns>Returns the type of the queue</returns>
-    public Type CheckType()
-    {
-        return typeof(T);
-    }
-    
-    /// <summary>Represents a node in the queue</summary>
+    ///<summary>Represents a node in the queue.</summary>
     public class Node
     {
-        private T value;
-        public Node next = null;
+        ///<summary>Gets or sets the value of the node.</summary>
+        public T Value { get; set; }
+        
+        ///<summary>Gets or sets the next node in the queue.</summary>
+        public Node Next { get; set; }
 
-        /// <summary>Initializes a new instance of the Node class with the specified value</summary>
+        ///<summary>Initializes a new instance of the Node class with the specified value.</summary>
         public Node(T value)
         {
-            this.value = value;
+            Value = value;
+            Next = null;
         }
     }
 
+    ///<summary>Represents the head of the queue.</summary>
     public Node head;
+
+    ///<summary>Represents the tail of the queue.</summary>
     public Node tail;
+
+    ///<summary>Represents the number of nodes in the queue.</summary>
     public int count;
 
-    ///<summary>Adds a new node to the end of the queue</summary>
+    ///<summary>Adds a new node to the end of the queue.</summary>
     public void Enqueue(T value)
     {
         Node newNode = new Node(value);
@@ -37,13 +40,13 @@ class Queue<T>
         }
         else
         {
-            tail.next = newNode;
+            tail.Next = newNode;
             tail = newNode;
         }
         count++;
     }
 
-    ///<summary>Returns the number of nodes in the queue</summary>
+    ///<summary>Returns the number of nodes in the queue.</summary>
     public int Count()
     {
         return count;
