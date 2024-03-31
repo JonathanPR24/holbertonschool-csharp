@@ -8,19 +8,11 @@ abstract class Base
     public string name { get; set; }
 
     /// <summary>
-    /// Constructor for the base class.
-    /// </summary>
-    public Base(string _name = "Door")
-    {
-        name = _name;
-    }
-
-    /// <summary>
     /// Convert the object to a string.
     /// </summary>
     public override string ToString()
     {
-        return $"{name} is a {GetType()}";
+        return $"{name} is a {this.GetType()}";
     }
 }
 
@@ -40,8 +32,13 @@ public interface IInteractive
 /// </summary>
 class Door : Base, IInteractive
 {
-    public Door(string _name = "Door") : base(_name)
+    /// <summary>
+    /// Constructor for the Door class.
+    /// </summary>
+    /// <param name="name">The name of the door.</param>
+    public Door(string name = "Door")
     {
+        this.name = name;
     }
 
     /// <summary>
