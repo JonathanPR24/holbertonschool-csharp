@@ -1,37 +1,38 @@
 ﻿using System;
 
+/// <summary>
+/// Represents a player.
+/// </summary>
 public class Player
 {
-    private string name;
-    private float maxHp;
-    private float hp;
+    private string name { get; set; }
+    private float maxHp { get; set; }
+    private float hp { get; set; }
 
-    public Player(string name, float maxHp)
+    /// <summary>
+    /// Constructor for player object.
+    /// </summary>
+    public Player(string name = "Player", float maxHp = 100f)
     {
         this.name = name;
-        if (maxHp <= 0)
+
+        if (maxHp > 0)
         {
-            Console.WriteLine("maxHp must be greater than 0. maxHp set to 100f by default.");
-            maxHp = 100f;
+            this.maxHp = maxHp;
         }
-        this.maxHp = maxHp;
-        this.hp = maxHp;
+        else
+        {
+            this.maxHp = 100f;
+            Console.WriteLine("maxHp must be greater than 0. maxHp set to 100f by default.");
+        }
+        this.hp = this.maxHp;
     }
 
+    /// <summary>
+    /// Prints the health of the player.
+    /// </summary>
     public void PrintHealth()
     {
         Console.WriteLine($"{name} has {hp} / {maxHp} health");
-    }
-}
-
-class Program
-{
-    static void Main(string[] args)
-    {
-        Player player1 = new Player("Electric Mouse", 500f);
-        Player player2 = new Player("Water Turtle");
-
-        player1.PrintHealth();
-        player2.PrintHealth();
     }
 }
