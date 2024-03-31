@@ -2,7 +2,7 @@
 
 public abstract class Base
 {
-    public string name { get; set; } = "";
+    protected string name { get; set; } = "";
 
     public override string ToString()
     {
@@ -34,16 +34,16 @@ public class TestObject : Base, IInteractive, IBreakable, ICollectable
 
     public void Interact()
     {
-        // Provide implementation for interaction
+        // Method implementation.
     }
 
     public void Break()
     {
-        // Provide implementation for breaking
+        // Method implementation.
     }
 
     public void Collect()
     {
-        // Provide implementation for collecting
+        // Method implementation.
     }
 }
