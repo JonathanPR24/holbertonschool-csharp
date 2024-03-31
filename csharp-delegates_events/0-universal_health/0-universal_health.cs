@@ -1,23 +1,12 @@
 ﻿using System;
 
-/// <summary>
-/// Player class
-/// </summary>
 public class Player
 {
-    // Player's name
-    private string name { get; set; }
-    // Player's max hp.
-    private float maxHp { get; set; }
-    // Player's hp
-    private float hp { get; set; }
-    
-    /// <summary>
-    /// Player constructor
-    /// </summary>
-    /// <param name="name">Player's name</param>
-    /// <param name="maxHp">Player's max hp</param>
-    public Player(string name = "Player", float maxHp = 100f)
+    private string name;
+    private float maxHp;
+    private float hp;
+
+    public Player(string name, float maxHp)
     {
         this.name = name;
         if (maxHp <= 0)
@@ -28,12 +17,21 @@ public class Player
         this.maxHp = maxHp;
         this.hp = maxHp;
     }
-    
-    /// <summary>
-    /// Prints player Health.
-    /// </summary>
+
     public void PrintHealth()
     {
         Console.WriteLine($"{name} has {hp} / {maxHp} health");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Player player1 = new Player("Electric Mouse", 500f);
+        Player player2 = new Player("Water Turtle");
+
+        player1.PrintHealth();
+        player2.PrintHealth();
     }
 }
