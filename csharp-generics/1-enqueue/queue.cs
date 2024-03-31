@@ -1,48 +1,49 @@
-﻿using System;
-
-/// <summary>
-/// Represents a generic queue.
-/// </summary>
-public class Queue<T>
+﻿///<summary>Class for queue operations</summary>
+/// <typeparam name="T">Type parameter</typeparam>
+class Queue<T>
 {
-    private Node head;
-    private Node tail;
-    private int count;
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="Queue{T}"/> class.
-    /// </summary>
-    public Queue()
+    ///<summary>Check if it's a queue type</summary>
+    ///<returns>Returns the type of the queue</returns>
+    public Type CheckType()
     {
-        head = null;
-        tail = null;
-        count = 0;
+        return typeof(T);
+    }
+    
+    /// <summary>Represents a node in the queue</summary>
+    public class Node
+    {
+        private T value;
+        public Node next = null;
+
+        /// <summary>Initializes a new instance of the Node class with the specified value</summary>
+        public Node(T value)
+        {
+            this.value = value;
+        }
     }
 
-    /// <summary>
-    /// Adds a new node with the specified value to the end of the queue.
-    /// </summary>
-    /// <param name="value">The value to be added to the queue.</param>
+    public Node head;
+    public Node tail;
+    public int count;
+
+    ///<summary>Adds a new node to the end of the queue</summary>
     public void Enqueue(T value)
     {
         Node newNode = new Node(value);
-        if (tail == null)
+        if (head == null)
         {
             head = newNode;
             tail = newNode;
         }
         else
         {
-            tail.Next = newNode;
+            tail.next = newNode;
             tail = newNode;
         }
         count++;
     }
 
-    /// <summary>
-    /// Returns the number of nodes in the queue.
-    /// </summary>
-    /// <returns>The number of nodes in the queue.</returns>
+    ///<summary>Returns the number of nodes in the queue</summary>
     public int Count()
     {
         return count;
