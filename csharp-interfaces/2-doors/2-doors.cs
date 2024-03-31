@@ -1,36 +1,59 @@
 ﻿using System;
 
-///<summary>Abstract base class representing an entity.</summary>
-abstract class Base
+/// <summary>
+/// Interface defining an interactable object.
+/// </summary>
+public interface IInteractive
 {
-    public string name = "";
-
-    public override string ToString()
-    {
-        return (this.name + " is a " + this.GetType().ToString());
-    }
-}
-
-///<summary>Interface for interactive objects.</summary>
-interface IInteractive
-{
+    /// <summary>
+    /// Interact with this object.
+    /// </summary>
     void Interact();
 }
 
-///<summary>Class representing a door.</summary>
-class Door : Base, IInteractive
+/// <summary>
+/// A base class.
+/// </summary>
+abstract class Base
 {
-    ///<summary>Constructor for Door class.</summary>
-    ///<param name="name">The name of the door. Default value is "Door" if not provided.</param>
-    public Door(string name = "Door")
+    public string name { get; set; }
+
+    /// <summary>
+    /// Constructor for the base class.
+    /// </summary>
+    public Base(string name = "Door")
     {
         this.name = name;
     }
 
-    ///<summary>Method invoked when interacting with the door.</summary>
+    /// <summary>
+    /// Convert the object to a string.
+    /// </summary>
+    public override string ToString()
+    {
+        return $"{name} is a {this.GetType()}";
+    }
+}
+
+/// <summary>
+/// Represents a door that can be interacted with.
+/// </summary>
+class Door : Base, IInteractive
+{
+    /// <summary>
+    /// Constructor for the Door class.
+    /// </summary>
+    /// <param name="name">The name of the door.</param>
+    public Door(string name = "Door") : base(name)
+    {
+    }
+
+    /// <summary>
+    /// Interact with the door.
+    /// </summary>
     public void Interact()
     {
-        Console.WriteLine($"You try to open the {this.name}. It's locked.");
+        Console.WriteLine($"You try to open the {name}. It's locked.");
     }
 }
 
