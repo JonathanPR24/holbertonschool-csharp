@@ -1,57 +1,60 @@
 ﻿using System;
 
 /// <summary>
-/// Abstract base class for various objects.
+/// Represents a door that can be interacted with.
 /// </summary>
-abstract class Base {
+class Door : Base, IInteractive
+{
+    /// <summary>
+    /// Constructor for the Door class.
+    /// </summary>
+    /// <param name="_name">The name of the door.</param>
+    public Door(string _name = "Door")
+    {
+        name = _name;
+    }
 
+    /// <summary>
+    /// Interact with the door.
+    /// </summary>
+    public void Interact()
+    {
+        Console.WriteLine($"You try to open the {name}. It's locked.");
+    }
+}
+
+/// <summary>
+/// A base class.
+/// </summary>
+abstract class Base
+{
     public string name { get; set; }
 
     /// <summary>
     /// Convert the object to a string.
     /// </summary>
-    public override string ToString() {
+    public override string ToString()
+    {
         return $"{name} is a {this.GetType()}";
     }
-
-}
-
-class TestObject : IInteractive, IBreakable, ICollectable {
-
-    public int durability { get; set; }
-    public bool isCollected { get; set; }
-
-    public void Interact() {
-        throw new NotImplementedException();
-    }
-
-    public void Break() {
-        throw new NotImplementedException();
-    }
-
-    public void Collect() {
-        throw new NotImplementedException();
-    }
-
 }
 
 /// <summary>
-/// Interface defining an object that can be interacted with.
+/// Interface defining an interactable object.
 /// </summary>
-public interface IInteractive {
-
+public interface IInteractive
+{
     /// <summary>
     /// Interact with this object.
     /// </summary>
     void Interact();
-
 }
 
 /// <summary>
-/// Interface defining an object that can be broken.
+/// Interface defining a breakable object.
 /// </summary>
-public interface IBreakable {
-
+public interface IBreakable
+{
     /// <summary>
     /// The durability of the breakable object.
     /// </summary>
@@ -61,14 +64,13 @@ public interface IBreakable {
     /// Break this object.
     /// </summary>
     void Break();
-
 }
 
 /// <summary>
-/// Interface defining an object that can be collected.
+/// Interface defining a collectable object.
 /// </summary>
-public interface ICollectable {
-
+public interface ICollectable
+{
     /// <summary>
     /// Denotes whether the object has been collected.
     /// </summary>
@@ -78,5 +80,4 @@ public interface ICollectable {
     /// Collect this object.
     /// </summary>
     void Collect();
-
 }
