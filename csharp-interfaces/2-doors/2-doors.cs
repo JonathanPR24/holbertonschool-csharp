@@ -1,70 +1,82 @@
 ﻿using System;
 
 /// <summary>
-/// A base class.
+/// Abstract base class for various objects.
 /// </summary>
-abstract class Base
-{
-    public string name { get; set; }
+abstract class Base {
 
-    /// <summary>
-    /// Constructor for the base class.
-    /// </summary>
-    public Base(string name = "Door")
-    {
-        this.name = name;
-    }
+    public string name { get; set; }
 
     /// <summary>
     /// Convert the object to a string.
     /// </summary>
-    public override string ToString()
-    {
+    public override string ToString() {
         return $"{name} is a {this.GetType()}";
     }
+
+}
+
+class TestObject : IInteractive, IBreakable, ICollectable {
+
+    public int durability { get; set; }
+    public bool isCollected { get; set; }
+
+    public void Interact() {
+        throw new NotImplementedException();
+    }
+
+    public void Break() {
+        throw new NotImplementedException();
+    }
+
+    public void Collect() {
+        throw new NotImplementedException();
+    }
+
 }
 
 /// <summary>
-/// Interface defining an interactable object.
+/// Interface defining an object that can be interacted with.
 /// </summary>
-public interface IInteractive
-{
+public interface IInteractive {
+
     /// <summary>
     /// Interact with this object.
     /// </summary>
     void Interact();
+
 }
 
 /// <summary>
-/// Represents a door that can be interacted with.
+/// Interface defining an object that can be broken.
 /// </summary>
-class Door : Base, IInteractive
-{
-    /// <summary>
-    /// Constructor for the Door class.
-    /// </summary>
-    /// <param name="name">The name of the door.</param>
-    public Door(string name = "Door") : base(name)
-    {
-    }
+public interface IBreakable {
 
     /// <summary>
-    /// Interact with the door.
+    /// The durability of the breakable object.
     /// </summary>
-    public void Interact()
-    {
-        Console.WriteLine($"You try to open the {name}. It's locked.");
-    }
+    int durability { get; set; }
+
+    /// <summary>
+    /// Break this object.
+    /// </summary>
+    void Break();
+
 }
 
-class Program
-{
-    static void Main(string[] args)
-    {
-        Door frontDoor = new Door("Front Door");
+/// <summary>
+/// Interface defining an object that can be collected.
+/// </summary>
+public interface ICollectable {
 
-        Console.WriteLine(frontDoor.ToString());
+    /// <summary>
+    /// Denotes whether the object has been collected.
+    /// </summary>
+    bool isCollected { get; set; }
 
-        frontDoor.Interact();
-    }
+    /// <summary>
+    /// Collect this object.
+    /// </summary>
+    void Collect();
+
 }
