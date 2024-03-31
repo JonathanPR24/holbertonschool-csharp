@@ -1,41 +1,57 @@
 ﻿using System;
 
+///<summary>Abstract base class representing an entity.</summary>
+abstract class Base
+{
+    public string name = "";
+
+    public override string ToString()
+    {
+        return (this.name + " is a " + this.GetType().ToString());
+    }
+}
+
+///<summary>Interface for interactive objects.</summary>
 interface IInteractive
 {
     void Interact();
 }
 
+///<summary>Interface for breakable objects.</summary>
 interface IBreakable
 {
     int durability { get; set; }
     void Break();
 }
 
+///<summary>Interface for collectable objects.</summary>
 interface ICollectable
 {
     bool isCollected { get; set; }
     void Collect();
 }
 
+///<summary>Class representing a test object that inherits from Base class and all interfaces.</summary>
 class TestObject : Base, IInteractive, IBreakable, ICollectable
 {
-    // Properties from IBreakable interface
     public int durability { get; set; }
-    public void Break()
-    {
-        // Implementation not provided for this task
-    }
-
-    // Properties from ICollectable interface
     public bool isCollected { get; set; }
-    public void Collect()
-    {
-        // Implementation not provided for this task
-    }
 
-    // Method from IInteractive interface
+    ///<summary>Method invoked when the object interacts with something.</summary>
     public void Interact()
     {
-        // Implementation not provided for this task
+
+    }
+
+    ///<summary>Method invoked when the object breaks.</summary>
+    public void Break()
+    {
+
+    }
+
+    ///<summary>Method invoked when the object is collected.</summary>
+    public void Collect()
+    {
+
     }
 }
