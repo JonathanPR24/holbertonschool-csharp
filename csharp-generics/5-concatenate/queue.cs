@@ -1,36 +1,33 @@
 ﻿using System;
-using System.Text;
 
-///<summary>Represents a generic queue.</summary>
-public class Queue<T>
+///<summary>Class for queue operations</summary>
+/// <typeparam name="T">type parameter</typeparam>
+class Queue<T>
 {
-    ///<summary>Represents a node in the queue.</summary>
+    ///<summary>Check if it's a queue type</summary>
+    ///<returns>Returns a Queue type</returns>
+    public Type CheckType()
+    {
+        return typeof(T);
+    }
+    
+    /// <summary>Class Node inside queue class</summary>
     public class Node
     {
-        ///<summary>Gets or sets the value of the node.</summary>
-        public T Value { get; set; }
-        
-        ///<summary>Gets or sets the next node in the queue.</summary>
-        public Node Next { get; set; }
+        public T value;
+        public Node next = null;
 
-        ///<summary>Initializes a new instance of the Node class with the specified value.</summary>
-        public Node(T value)
+        public Node(T item)
         {
-            Value = value;
-            Next = null;
+            value = item;
         }
     }
 
-    ///<summary>Represents the head of the queue.</summary>
     public Node head;
-
-    ///<summary>Represents the tail of the queue.</summary>
     public Node tail;
-
-    ///<summary>Represents the number of nodes in the queue.</summary>
     public int count;
 
-    ///<summary>Adds a new node to the end of the queue.</summary>
+    ///<summary>Add new node at the end</summary>
     public void Enqueue(T value)
     {
         Node newNode = new Node(value);
@@ -41,13 +38,13 @@ public class Queue<T>
         }
         else
         {
-            tail.Next = newNode;
+            tail.next = newNode;
             tail = newNode;
         }
         count++;
     }
 
-    ///<summary>Removes the first node in the queue and returns its value.</summary>
+    ///<summary>Remove and return the first node</summary>
     public T Dequeue()
     {
         if (head == null)
@@ -55,15 +52,16 @@ public class Queue<T>
             Console.WriteLine("Queue is empty");
             return default(T);
         }
-
-        T value = head.Value;
-        head = head.Next;
-        count--;
-
-        return value;
+        else
+        {
+            T dequeuedValue = head.value;
+            head = head.next;
+            count--;
+            return dequeuedValue;
+        }
     }
 
-    ///<summary>Returns the value of the first node in the queue without removing the node.</summary>
+    ///<summary>Return the value of the first node without removing it</summary>
     public T Peek()
     {
         if (head == null)
@@ -71,28 +69,31 @@ public class Queue<T>
             Console.WriteLine("Queue is empty");
             return default(T);
         }
-
-        return head.Value;
+        else
+        {
+            return head.value;
+        }
     }
 
-    ///<summary>Prints the queue, starting from the head.</summary>
+    ///<summary>Print the queue, starting from the head</summary>
     public void Print()
     {
         if (head == null)
         {
             Console.WriteLine("Queue is empty");
-            return;
         }
-
-        Node current = head;
-        while (current != null)
+        else
         {
-            Console.WriteLine(current.Value);
-            current = current.Next;
+            Node current = head;
+            while (current != null)
+            {
+                Console.WriteLine(current.value);
+                current = current.next;
+            }
         }
     }
 
-    ///<summary>Concatenates all values in the queue if the queue is of type string or char.</summary>
+    ///<summary>Concatenate all values in the queue if it's of type string or char</summary>
     public string Concatenate()
     {
         if (head == null)
@@ -100,26 +101,21 @@ public class Queue<T>
             Console.WriteLine("Queue is empty");
             return null;
         }
-
-        if (typeof(T) != typeof(string) && typeof(T) != typeof(char))
+        else if (typeof(T) != typeof(string) && typeof(T) != typeof(char))
         {
-            Console.WriteLine("Concatenate() is for a queue of Strings or Chars only.");
+            Console.WriteLine("Concatenate() is for a queue of Strings or Chars only");
             return null;
         }
-
-        StringBuilder result = new StringBuilder();
-        Node current = head;
-        while (current != null)
+        else
         {
-            result.Append(current.Value);
-            current = current.Next;
+            Node current = head;
+            string concatenatedValue = "";
+            while (current != null)
+            {
+                concatenatedValue += current.value.ToString();
+                current = current.next;
+            }
+            return concatenatedValue;
         }
-        return result.ToString();
-    }
-
-    ///<summary>Returns the number of nodes in the queue.</summary>
-    public int Count()
-    {
-        return count;
     }
 }
