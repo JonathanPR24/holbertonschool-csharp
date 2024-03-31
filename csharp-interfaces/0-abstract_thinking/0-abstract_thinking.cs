@@ -1,14 +1,14 @@
 ﻿using System;
 
 /// <summary>
-/// Abstract class representing a base entity.
+/// Abstract base class representing an entity.
 /// </summary>
-public abstract class Base
+abstract class Base
 {
     /// <summary>
     /// Gets or sets the name of the entity.
     /// </summary>
-    public string Name { get; set; }
+    protected string name = "";
 
     /// <summary>
     /// Overrides the ToString method to provide custom string representation.
@@ -16,6 +16,6 @@ public abstract class Base
     /// <returns>A string representing the name and type of the entity.</returns>
     public override string ToString()
     {
-        return $"{Name} is a {GetType().Name}";
+        return $"{name} is a {GetType()}";
     }
 }
