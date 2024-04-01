@@ -3,7 +3,7 @@
 delegate void CalculateHealth(float value);
 
 /// <summary>
-/// Represents a character in the game.
+/// Represents a player.
 /// </summary>
 public class Player
 {
@@ -12,10 +12,8 @@ public class Player
     float hp { get; set; }
 
     /// <summary>
-    /// Initializes a new instance of the Player class.
+    /// Constructor for player object.
     /// </summary>
-    /// <param name="name">The name of the player.</param>
-    /// <param name="maxHp">The maximum health points of the player.</param>
     public Player(string name = "Player", float maxHp = 100f) {
         this.name = name;
 
@@ -29,42 +27,39 @@ public class Player
     }
 
     /// <summary>
-    /// Applies damage to the player.
+    /// Applies damage to player.
     /// </summary>
-    /// <param name="damage">The amount of damage to be applied.</param>
     public void TakeDamage(float damage) {
         if (damage >= 0) {
             Console.WriteLine($"{name} takes {damage} damage!");
+            ValidateHP(hp - damage);
         } else {
             Console.WriteLine($"{name} takes 0 damage!");
         }
-        ValidateHP(hp - damage);
     }
 
     /// <summary>
-    /// Rejuvenates player's HP.
+    /// Rejuvenates player HP.
     /// </summary>
-    /// <param name="heal">The amount of HP to be healed.</param>
     public void HealDamage(float heal) {
         if (heal >= 0) {
             Console.WriteLine($"{name} heals {heal} HP!");
+            ValidateHP(hp + heal);
         } else {
             Console.WriteLine($"{name} heals 0 HP!");
         }
-        ValidateHP(hp + heal);
     }
 
     /// <summary>
-    /// Sets the new value of the Player’s hp after validation.
+    /// Validates player's new HP.
     /// </summary>
-    /// <param name="newHp">The new value of the player's hp.</param>
     public void ValidateHP(float newHp) {
-        if (newHp < 0) {
-            hp = 0;
+        if (newHp < 0 ) {
+            this.hp = 0;
         } else if (newHp > maxHp) {
-            hp = maxHp;
+            this.hp = maxHp;
         } else {
-            hp = newHp;
+            this.hp = newHp;
         }
     }
 
@@ -73,23 +68,5 @@ public class Player
     /// </summary>
     public void PrintHealth() {
         Console.WriteLine($"{name} has {hp} / {maxHp} health");
-    }
-}
-
-class Program
-{
-    static void Main(string[] args)
-    {
-        Player player = new Player("Electric Mouse");
-
-        player.PrintHealth();
-
-        player.TakeDamage(50f);
-
-        player.PrintHealth();
-
-        player.HealDamage(49f);
-
-        player.PrintHealth();
     }
 }
