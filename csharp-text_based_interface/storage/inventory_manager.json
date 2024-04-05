@@ -1,0 +1,40 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "name": "Item 1",
+            "description": "Description of item 1",
+            "price": 10.99,
+            "tags": ["tag1", "tag2"]
+        },
+        {
+            "id": 2,
+            "name": "Item 2",
+            "description": "Description of item 2",
+            "price": 20.49,
+            "tags": ["tag3", "tag4"]
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "name": "User 1"
+        },
+        {
+            "id": 2,
+            "name": "User 2"
+        }
+    ],
+    "inventory": [
+        {
+            "user_id": 1,
+            "item_id": 1,
+            "quantity": 5
+        },
+        {
+            "user_id": 2,
+            "item_id": 2,
+            "quantity": 10
+        }
+    ]
+}
