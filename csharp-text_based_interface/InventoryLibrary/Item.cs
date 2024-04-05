@@ -9,7 +9,7 @@ namespace InventoryLibrary
         public string Name { get; set; }
 
         // Optional properties
-        public string Description { get; set; }
+        public string Description { get; set; } = ""; // Initialize the property
         public float? Price { get; set; } // Nullable float to allow null
         public List<string> Tags { get; set; }
 
